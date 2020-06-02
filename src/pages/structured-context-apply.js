@@ -7,7 +7,6 @@ import TitleAreaNew from "../components/TitleAreaNew";
 import DefaultTitleAreaContent from "../components/DefaultTitleAreaContent";
 import DividerLine from "../components/DividerLine";
 import ContentContainer from "../components/ContentContainer";
-import EmbeddedForm from "../components/EmbeddedForm";
 import { colors } from "../_Theme/UpdatedBrandTheme";
 
 const ContributorApplication = () => {
@@ -40,19 +39,9 @@ const ContributorApplication = () => {
             width: calc(100%-40px);
             max-width: 900px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 20px;
           `}
         >
-          <p
-            css={css`
-              font-weight: bold;
-            `}
-          >
-            Warning! If you use the Privacy Badger extension, you won&apos;t be
-            able to save or submit this form. We&apos;re aware of the issue and
-            working to resolve it. Make sure to turn it off and refresh the
-            page.
-          </p>
           <p
             css={css`
               font-style: italic;
@@ -71,7 +60,23 @@ const ContributorApplication = () => {
             </Link>
             .
           </p>
-          <EmbeddedForm formSrc="https://form.jotform.com/201465789968173" />
+          <p
+            css={css`
+              margin-top: 40px;
+              font-weight: bold;
+            `}
+          >
+            We&apos;re excited to meet you! To get started on this journey with
+            us fill out the{" "}
+            <a
+              href="https://forms.gle/ZvMx9PWvC3zUNRRF8"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Structured Context Program application
+            </a>
+            .
+          </p>
         </div>
       </ContentContainer>
       <DividerLine hexColor={colors.pink.hex} />

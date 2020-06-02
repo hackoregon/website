@@ -27,6 +27,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             updatedAt(formatString: "MMMM DD, YYYY")
             buttonText
             buttonLocalLink
+            buttonExternalLink
           }
         }
       }

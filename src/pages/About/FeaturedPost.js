@@ -20,6 +20,7 @@ const FeaturedPost = () => {
           updatedAt(formatString: "MMMM DD, YYYY")
           buttonText
           buttonLocalLink
+          buttonExternalLink
         }
       }
     `
@@ -36,6 +37,7 @@ const FeaturedPost = () => {
       featured
       buttonText={contentfulPost.buttonText}
       buttonLocalLink={contentfulPost.buttonLocalLink}
+      buttonExternalLink={contentfulPost.buttonExternalLink}
     />
   );
 };

@@ -26,6 +26,7 @@ const PostTemplate = ({ pageContext }) => {
           updated={post.updatedAt}
           buttonText={post.buttonText}
           buttonLocalLink={post.buttonLocalLink}
+          buttonExternalLink={post.buttonExternalLink}
         />
       </ContentContainer>
       <DividerLine hexColor={colors.pink.hex} />

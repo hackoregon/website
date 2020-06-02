@@ -17,7 +17,8 @@ const Post = ({
   updated,
   created,
   buttonText,
-  buttonLocalLink
+  buttonLocalLink,
+  buttonExternalLink
 }) => (
   <GridSingle
     containerStyle={css`
@@ -60,7 +61,8 @@ const Post = ({
       </p>
     ))}
     <div>{documentToReactComponents(content.json, options)}</div>
-    {buttonText && (
+    {/* Temporary condition to handle contentful update (removing buttonLocalLink when this is merged) */}
+    {buttonLocalLink && !buttonExternalLink && (
       <Link
         to={buttonLocalLink}
         className="btn-yellow"
@@ -70,6 +72,19 @@ const Post = ({
       >
         <p>{buttonText}</p>
       </Link>
+    )}
+    {buttonExternalLink && (
+      <a
+        href={buttonExternalLink}
+        className="btn-yellow"
+        css={css`
+          margin-top: 1.5rem;
+        `}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <p>{buttonText}</p>
+      </a>
     )}
   </GridSingle>
 );
