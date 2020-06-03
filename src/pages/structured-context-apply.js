@@ -60,6 +60,7 @@ const ContributorApplication = () => {
             </Link>
             .
           </p>
+
           <p
             css={css`
               margin-top: 40px;
@@ -69,7 +70,7 @@ const ContributorApplication = () => {
             We&apos;re excited to meet you! To get started on this journey with
             us fill out the{" "}
             <a
-              href="https://forms.gle/ZvMx9PWvC3zUNRRF8"
+              href="https://airtable.com/shraGhSLldh9NhJMh"
               target="_blank"
               rel="noopener noreferrer"
             >
