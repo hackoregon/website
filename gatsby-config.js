@@ -51,9 +51,19 @@ module.exports = {
           "https://hackoregon.us3.list-manage.com/subscribe/post?u=6bed8811c700af6cf48dfe893&amp;id=b11a78686d" // add your MC list endpoint here; see instructions below
       }
     },
-    `gatsby-plugin-layout`
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-layout`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: "Civic Software Foundation",
+        short_name: "CIVIC",
+        start_url: "/",
+        background_color: " #DC4556",
+        theme_color: " #DC4556",
+        icon: "src/images/icon.png",
+        crossOrigin: `use-credentials`
+      }
+    },
+    `gatsby-plugin-offline`
   ]
 };
