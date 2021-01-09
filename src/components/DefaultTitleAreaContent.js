@@ -44,9 +44,11 @@ const DefaultTitleAreaContent = ({ subtitle, title }) => {
           <span
             css={css`
               line-height: 1.4;
+              ${!subtitle && `color: ${colors.primary.hex}`}
             `}
           >
-            {subtitle || ""}
+            {subtitle ||
+              "Building knowledge systems that hold value in the public interest"}
           </span>
         </div>
       </h2>
