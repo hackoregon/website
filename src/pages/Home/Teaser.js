@@ -37,7 +37,7 @@ const Teaser = () => {
           to={buttonLink}
           className="btn-pink"
           css={css`
-            margin-bottom: 20px;
+            margin-top: 20px;
           `}
         >
           <p>{buttonTitle}</p>
