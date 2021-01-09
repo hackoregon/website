@@ -20,10 +20,7 @@ const LibraryHeader = () => {
 
   return (
     <TitleAreaNew dividerLineColor={colors.purple.hex}>
-      <DefaultTitleAreaContent
-        subtitle={contentfulHeading.subtitle}
-        title={contentfulHeading.title}
-      />
+      <DefaultTitleAreaContent title={contentfulHeading.title} />
     </TitleAreaNew>
   );
 };
