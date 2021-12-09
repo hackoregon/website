@@ -1,8 +1,7 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
 import { useState } from "react";
-import { Link } from "gatsby";
-import { navigate } from "@reach/router";
+import { navigate, Link } from "gatsby";
 import MenuIcon from "@material-ui/icons/Menu";
 import { Logo } from "@hackoregon/ui-brand";
 import { AnchorLink } from "gatsby-plugin-anchor-links";
@@ -87,30 +86,47 @@ const Header = () => {
             css={css`
               margin: 0;
             `}
-            onClick={() => {
-              navigate("#events");
-            }}
           >
-            <h3
-              css={css`
-                color: white;
-                margin: 0;
-              `}
-            >
-              Events
-            </h3>
+            <AnchorLink to="/#events">
+              <h3
+                css={css`
+                  color: white;
+                  margin: 0;
+                `}
+              >
+                Events
+              </h3>
+            </AnchorLink>
           </button>
+
           <button
             type="button"
             className="headerButton"
             css={css`
               margin: 0;
             `}
-            onClick={() => {
-              navigate("#apply");
-            }}
           >
-            <AnchorLink to="/#join">
+            {" "}
+            <AnchorLink to="/#cohorts">
+              <h3
+                css={css`
+                  color: white;
+                  margin: 0;
+                `}
+              >
+                Cohorts
+              </h3>
+            </AnchorLink>
+          </button>
+
+          <button
+            type="button"
+            className="headerButton"
+            css={css`
+              margin: 0;
+            `}
+          >
+            <AnchorLink to="/#apply">
               <h3
                 css={css`
                   color: white;
@@ -128,28 +144,8 @@ const Header = () => {
             css={css`
               margin: 0;
             `}
-          >
-            {" "}
-            <AnchorLink to="/#projects">
-              <h3
-                css={css`
-                  color: white;
-                  margin: 0;
-                `}
-              >
-                Projects
-              </h3>
-            </AnchorLink>
-          </button>
-
-          <button
-            type="button"
-            className="headerButton"
-            css={css`
-              margin: 0;
-            `}
             onClick={() => {
-              goTo("/about/");
+              goTo("/about");
             }}
           >
             <h3

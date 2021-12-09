@@ -1,17 +1,12 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
-
 import PageLayout from "../components/PageLayout";
-import SectionHeader from "../components/SectionHeader";
-
 import Splash from "./Home/Splash";
 import Teaser from "./Home/Teaser";
 import CallToActionBlocks from "./Home/CallToActionBlocks";
 import WorldTour from "./Home/WorldTour";
 import ContributorCTA from "./Collaboration/ContributorCTA";
-
 import DividerLine from "../components/DividerLine";
-import ContentContainer from "../components/ContentContainer";
 import { colors } from "../_Theme/UpdatedBrandTheme";
 
 const IndexPage = () => {
@@ -30,10 +25,7 @@ const IndexPage = () => {
       <WorldTour />
       <DividerLine hexColor={colors.pink.hex} />
 
-      <ContentContainer margin="md">
-        <SectionHeader title="Selected Projects" wideContent />
-        <CallToActionBlocks noDivider />
-      </ContentContainer>
+      <CallToActionBlocks noDivider />
       <DividerLine hexColor={colors.yellow.hex} />
 
       <ContributorCTA />
