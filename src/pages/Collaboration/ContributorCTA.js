@@ -47,9 +47,9 @@ const ContributorCTA = () => {
             }
           `}
         >
-          <a id="apply" href="apply">
-            <h2>{contentfulCallToActionBlock.tagline}</h2>
-          </a>
+          {/* eslint-disable-next-line */}
+          <a id="apply" />
+          <h2>{contentfulCallToActionBlock.tagline}</h2>
           <div
             css={css`
               max-width: 800px;
