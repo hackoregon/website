@@ -54,7 +54,8 @@ module.exports = {
     {
       files: ["*.test.js"],
       rules: {
-        "no-unused-expressions": "off"
+        "no-unused-expressions": "off",
+        "jsx-a11y/anchor-is-valid": "off"
       }
     }
   ]

@@ -47,7 +47,9 @@ const ContributorCTA = () => {
             }
           `}
         >
-          <h2>{contentfulCallToActionBlock.tagline}</h2>
+          <a id="apply" href="apply">
+            <h2>{contentfulCallToActionBlock.tagline}</h2>
+          </a>
           <div
             css={css`
               max-width: 800px;

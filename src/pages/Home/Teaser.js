@@ -13,6 +13,7 @@ const Teaser = () => {
         contentfulCallToActionSimple(
           contentful_id: { eq: "4xAM1s3NoGu4eCpkLGBa27" }
         ) {
+          tagline
           buttonLink
           buttonTitle
           summary {
@@ -23,7 +24,12 @@ const Teaser = () => {
     `
   );
 
-  const { summary, buttonLink, buttonTitle } = contentfulCallToActionSimple;
+  const {
+    summary,
+    buttonLink,
+    buttonTitle,
+    tagline
+  } = contentfulCallToActionSimple;
 
   return (
     <ContentContainer margin="sm">
@@ -32,6 +38,7 @@ const Teaser = () => {
           padding: 0 20px;
         `}
       >
+        <h2>{tagline}</h2>
         {documentToReactComponents(summary.json)}
         <Link
           to={buttonLink}
