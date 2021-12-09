@@ -4,9 +4,10 @@ import { useState } from "react";
 import { navigate, Link } from "gatsby";
 import MenuIcon from "@material-ui/icons/Menu";
 import { Logo } from "@hackoregon/ui-brand";
+import { AnchorLink } from "gatsby-plugin-anchor-links";
 
 import HeaderDropdown from "./HeaderDropdown";
-import AboutDropdown from "./AboutDropdown";
+// import AboutDropdown from "./AboutDropdown";
 import {
   colors,
   smBreak,
@@ -67,10 +68,10 @@ const Header = () => {
         <div
           css={css`
             display: grid;
-            grid-template-columns: repeat(3, auto);
+            grid-template-columns: repeat(4, auto);
             justify-self: end;
-            max-width: 300px;
-            width: 27vw;
+            max-width: 600px;
+            width: 45vw;
             justify-content: space-between;
             align-content: center;
 
@@ -85,19 +86,58 @@ const Header = () => {
             css={css`
               margin: 0;
             `}
-            onClick={() => {
-              goTo("/library/");
-            }}
           >
-            <h3
-              css={css`
-                color: white;
-                margin: 0;
-              `}
-            >
-              Library
-            </h3>
+            <AnchorLink to="/#events">
+              <h3
+                css={css`
+                  color: white;
+                  margin: 0;
+                `}
+              >
+                Events
+              </h3>
+            </AnchorLink>
           </button>
+
+          <button
+            type="button"
+            className="headerButton"
+            css={css`
+              margin: 0;
+            `}
+          >
+            {" "}
+            <AnchorLink to="/#cohorts">
+              <h3
+                css={css`
+                  color: white;
+                  margin: 0;
+                `}
+              >
+                Cohorts
+              </h3>
+            </AnchorLink>
+          </button>
+
+          <button
+            type="button"
+            className="headerButton"
+            css={css`
+              margin: 0;
+            `}
+          >
+            <AnchorLink to="/#apply">
+              <h3
+                css={css`
+                  color: white;
+                  margin: 0;
+                `}
+              >
+                Join Us
+              </h3>
+            </AnchorLink>
+          </button>
+
           <button
             type="button"
             className="headerButton"
@@ -105,7 +145,7 @@ const Header = () => {
               margin: 0;
             `}
             onClick={() => {
-              goTo("/platform/");
+              goTo("/about");
             }}
           >
             <h3
@@ -114,10 +154,10 @@ const Header = () => {
                 margin: 0;
               `}
             >
-              Platform
+              About
             </h3>
           </button>
-          <AboutDropdown goTo={goTo} />
+          {/* <AboutDropdown goTo={goTo} /> */}
         </div>
 
         <button
