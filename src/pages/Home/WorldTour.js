@@ -1,4 +1,7 @@
 /** @jsx jsx */
+// eslint-disable-next-line
+import React from "react";
+
 import { jsx, css } from "@emotion/core";
 // import { useStaticQuery, graphql } from "gatsby";
 import SectionHeader from "../../components/SectionHeader";
@@ -13,7 +16,7 @@ const TOUR_DATES = [
   },
   {
     date: "Nov 25",
-    city: "Edinburgh",
+    city: "",
     venue: "Intersectional Feminist-Thinking for Data and Justice Movements"
   },
   {
@@ -23,7 +26,7 @@ const TOUR_DATES = [
   },
   {
     date: "Dec 1",
-    city: "London",
+    city: "",
     venue:
       "Hollywood vs Silicon Valley Models for Labor, Talent, and Attribution"
   },
@@ -68,17 +71,18 @@ const EventLineItem = event => {
       </span>
       <span
         css={css`
-          margin: 10px;
+          margin: 10px 20px 30px 20px;
         `}
       >
-        {event.event.date}
-      </span>
-      <span
-        css={css`
-          margin: 10px;
-        `}
-      >
-        {event.event.venue}
+        {/* eslint-disable-next-line */}
+        <span>{event.event.date} // </span>
+        <span
+          css={css`
+            font-weight: normal;
+          `}
+        >
+          {event.event.venue}
+        </span>
       </span>
     </>
   );
@@ -104,12 +108,16 @@ const WorldTour = () => {
 
   return (
     <ContentContainer margin="md">
-      <a id="events" href="events">
-        <SectionHeader title="Data is Dust (Europe Tour)" />
-      </a>
-      <h3>Data as Material for Art</h3>
+      {/* eslint-disable-next-line */}
+      <a id="events" />
+      <SectionHeader
+        title="Data is Dust (Europe Tour)"
+        subtitle="Data as Material for Art"
+      />
       <GridSingle wideContent>
-        A pop-up series of conceptual speaking and performance events at the intersection of data, design, politics & culture. Featuring Executive Director Cat Nikolovski and surprise guests.
+        A pop-up series of conceptual speaking and performance events at the
+        intersection of data, design, politics & culture. Featuring Executive
+        Director Cat Nikolovski and surprise guests.
       </GridSingle>
       <GridSingle wideContent>
         <div
@@ -118,7 +126,7 @@ const WorldTour = () => {
             display: grid;
             margin-top 40px;
             padding: 0 40px;
-            grid-template-columns: 20% 20% auto;
+            grid-template-columns: 15% auto;
             font-size: 24px;
             font-weight: bold;
           `}

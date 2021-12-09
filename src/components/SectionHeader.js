@@ -53,6 +53,7 @@ const SectionHeader = ({
       <h3
         className={big ? "h-2" : "h-3"}
         css={css`
+          margin-top: -20px;
           max-width: 600px;
         `}
       >
