@@ -1,19 +1,19 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
-import { useState } from "react";
+// import { useState } from "react";
 import { navigate, Link } from "gatsby";
-import MenuIcon from "@material-ui/icons/Menu";
+// import MenuIcon from "@material-ui/icons/Menu";
 import { Logo } from "@hackoregon/ui-brand";
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 
-import HeaderDropdown from "./HeaderDropdown";
+// import HeaderDropdown from "./HeaderDropdown";
 // import AboutDropdown from "./AboutDropdown";
 import {
   colors,
   smBreak,
-  mdBreak,
+  // mdBreak,
   xsBreak,
-  focusBorder,
+  // focusBorder,
   maxContentWidth,
   noHover
 } from "../_Theme/UpdatedBrandTheme";
@@ -45,14 +45,14 @@ const logoContainer = css`
 `;
 
 const Header = () => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  // const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  const toggleDropdown = () => {
-    setDropdownOpen(!dropdownOpen);
-  };
+  // const toggleDropdown = () => {
+  //   setDropdownOpen(!dropdownOpen);
+  // };
 
   const goTo = path => {
-    setDropdownOpen(false);
+    // setDropdownOpen(false);
     navigate(path);
   };
 
@@ -160,7 +160,7 @@ const Header = () => {
           {/* <AboutDropdown goTo={goTo} /> */}
         </div>
 
-        <button
+        {/* <button
           css={css`
             display: flex;
             flex-direction: column;
@@ -193,7 +193,8 @@ const Header = () => {
         open={dropdownOpen}
         headerHeight={headerHeight}
         goTo={goTo}
-      />
+      /> */}
+      </div>
     </div>
   );
 };

@@ -8,6 +8,8 @@ import SectionHeader from "../../components/SectionHeader";
 import GridSingle from "../../components/GridSingle";
 import ContentContainer from "../../components/ContentContainer";
 
+import { smBreak, xsBreak } from "../../_Theme/UpdatedBrandTheme";
+
 const TOUR_DATES = [
   {
     date: "Nov 24",
@@ -107,7 +109,7 @@ const WorldTour = () => {
   // );
 
   return (
-    <ContentContainer margin="md">
+    <ContentContainer margin="sm">
       {/* eslint-disable-next-line */}
       <a id="events" />
       <SectionHeader
@@ -115,11 +117,17 @@ const WorldTour = () => {
         subtitle="Data as Material for Art"
       />
       <GridSingle wideContent>
-        A pop-up series of conceptual speaking and performance events at the
-        intersection of data, design, politics & culture. Featuring Executive
-        Director Cat Nikolovski and surprise guests.
-      </GridSingle>
-      <GridSingle wideContent>
+        <p
+          css={css`
+            ${smBreak}, ${xsBreak} {
+              margin: 0 20px;
+            }
+          `}
+        >
+          A pop-up series of conceptual speaking and performance events at the
+          intersection of data, design, politics & culture. Featuring Executive
+          Director Cat Nikolovski and surprise guests.
+        </p>
         <div
           className="WorldTourList"
           css={css`
@@ -129,6 +137,9 @@ const WorldTour = () => {
             grid-template-columns: 15% auto;
             font-size: 24px;
             font-weight: bold;
+            ${smBreak}, ${xsBreak} {
+              grid-template-columns: auto;
+            }
           `}
         >
           {TOUR_DATES.map(event => (
