@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable jsx-a11y/anchor-has-content */
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
 import { Logo } from "@hackoregon/ui-brand";
@@ -63,6 +65,7 @@ const ProgramAreas = () => {
         padding: 40px 20px;
       `}
     >
+      <a id="programs" />
       <div
         style={{
           display: "flex",

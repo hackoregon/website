@@ -619,5 +619,17 @@ export default {
   },
   ".sidebar-purple:hover": {
     background: "rgba(114, 29, 124, 0.5)"
+  },
+  ".sidebar-green-selected": {
+    background: "rgba(25, 183, 170, 0.5)"
+  },
+  ".sidebar-pink-selected": {
+    background: "rgba(220, 69, 86, 0.5)"
+  },
+  ".sidebar-yellow-selected": {
+    background: "rgba(255, 178, 31, 0.5)"
+  },
+  ".sidebar-purple-selected": {
+    background: "rgba(114, 29, 124, 0.5)"
   }
 };
