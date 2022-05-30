@@ -10,7 +10,7 @@ const Splash = () => (
     containerStyle={css`
       display: flex;
       flex-direction: row;
-      background-image: url("images/splash_portrait.png");
+      background-image: url("../../../images/splash_portrait.png");
       background-repeat: no-repeat;
       background-size: 150px auto;
       background-position: left bottom;

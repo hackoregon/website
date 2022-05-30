@@ -8,6 +8,7 @@ import { jsx, css } from "@emotion/core";
 import { Fragment, useState } from "react";
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 import { Link } from "gatsby";
+// import { StaticImage } from "gatsby-plugin-image"
 import { Logo } from "@hackoregon/ui-brand";
 
 import { colors } from "../../_Theme/UpdatedBrandTheme";
@@ -19,7 +20,7 @@ const categories = {
     title: "Our Brand Promise",
     content:
       "As a 501 (c)(3) nonprofit CIVIC only accepts projects which are aligned with our organizational mission to serve diverse and equitable constituencies, and where the ownership of technology remains open-source or in the custodianship of the public sector. We operate as a collective of global practitioners that borrow from industry-standard practices which are specifically adapted to re-center value in the public interest and support a vision of delivering competitive software that stands in contrast to predominant models of extraction and/or venture-backed economies of scale.",
-    image: "images/about_brandPromise.png",
+    image: "../../../images/about_brandPromise.png",
     ctaUrl: "http://www.example.com",
     ctaText: "Read full text >>"
   },
@@ -27,7 +28,7 @@ const categories = {
     title: "CIVIC Platform",
     content:
       "We build and maintain our own open source platorm ecosystem and developer enviornment to support, scale, continuity, and best  practices for altruistic data infrastructure where the “bottom line” serves people, not profit. ",
-    image: "images/about_civicPlatform.png",
+    image: "../../../images/about_civicPlatform.png",
     ctaUrl: "http://www.example.com",
     ctaText: "Peek under the hood >>"
   },
@@ -35,7 +36,7 @@ const categories = {
     title: "Altruistic Lifecycle",
     content:
       "Creating values-based technnology impacts every stage development, and CIVIC takes extra consideration     to build momentum for sucess from day zero.  Over years of work,  we’ve distilled six elements which are essential to bring together the best teams, promote overall project health, and deliver repeat magic when your goal is to authenitically serve the public interest.",
-    image: "images/about_altruisticLifecycle.png",
+    image: "../../../images/about_altruisticLifecycle.png",
     ctaUrl: "http://www.example.com",
     ctaText: "See the elements >>"
   },
@@ -43,7 +44,7 @@ const categories = {
     title: "Funding Strategies",
     content:
       "CIVIC is primarily revenue funded through an institutional membership model and project implementations and government, accademic, and other partners who are commited to a vision of technology as  a public service.  Grants help us invest in new innovation areas, expand education activities, or take on meaningful challenges where traditional funding isn’t available.  All of our earned income is cycled back into growing and deepening our community of contributors fostering experimentation, research,  and connection.",
-    image: "images/about_fundingStrategies.png",
+    image: "../../../images/about_fundingStrategies.png",
     ctaUrl: "http://www.example.com",
     ctaText: "How we reinvest >>"
   }

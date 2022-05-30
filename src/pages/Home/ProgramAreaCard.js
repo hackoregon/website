@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
-import { Link } from "gatsby";
+import { Link, withPrefix } from "gatsby";
 import { colors } from "../../_Theme/UpdatedBrandTheme";
 
 // https://app.contentful.com/spaces/3j4jpxgb52st/content_types/project/fields
@@ -21,7 +21,7 @@ const ProjectDetail = ({ title, image, summary, projectUrl, ctaText }) => {
       <div
         style={{
           flexBasis: "40%",
-          background: `url(${image})`,
+          background: `url(${withPrefix(image)})`,
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat"
         }}
