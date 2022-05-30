@@ -2,6 +2,7 @@
 import { jsx, css } from "@emotion/core";
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 import { colors } from "../../_Theme/UpdatedBrandTheme";
+import CivicHeaderImage from "../../components/CivicHeaderImage";
 
 import GridSingle from "../../components/GridSingle";
 
@@ -9,10 +10,11 @@ const AboutBlock = () => {
   return (
     <GridSingle
       containerStyle={css`
-        padding: 0 20px;
         color: ${colors.white};
         display: grid;
         grid-template-columns: 200px auto;
+        height: 450px;
+        border-bottom: 6px solid ${colors.green.hex};
       `}
     >
       {/* sidebar buttons */}
@@ -51,11 +53,12 @@ const AboutBlock = () => {
         css={css`
           color: ${colors.white};
           background: ${colors.primary.hex};
-          padding: 40px;
+          padding: 0 40px;
+          display: flex;
         `}
       >
-        <h2>Our Brand Promise</h2>
         <div>
+          <h2>Our Brand Promise</h2>
           As a 501 (c)(3) nonprofit CIVIC only accepts projects which are
           aligned with our organizational mission to serve diverse and equitable
           constituencies, and where the ownership of technology remains
@@ -66,12 +69,9 @@ const AboutBlock = () => {
           delivering competitive software that stands in contrast to predominant
           models of extraction and/or venture-backed economies of scale.
         </div>
-        <div
-          css={css`
-            margin-top: 40px;
-            font-size: 24px;
-          `}
-        />
+        <div>
+          <CivicHeaderImage />
+        </div>
       </div>
     </GridSingle>
   );

@@ -299,8 +299,8 @@ const button = {
   background: colors.primary.hex,
   border: "none",
   boxSizing: "border-box",
-  boxShadow: `6px 6px 0px ${VisualizationColors.categorical.pink.hex}`,
-  transition: "all .1s ease-in-out-circ",
+  // boxShadow: `6px 6px 0px ${VisualizationColors.categorical.pink.hex}`,
+  // transition: "all .1s ease-in-out-circ",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
@@ -581,7 +581,7 @@ export default {
     border: "none",
     padding: "0",
     cursor: "pointer",
-    ...underlineFocus,
+    // ...underlineFocus,
 
     "> h4": {
       margin: "0.2rem",

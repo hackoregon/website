@@ -13,13 +13,6 @@ const PageLayout = ({ title, keywords, children, home }) => {
       <SEO title={title} keywords={keywords} />
       <NewHeader home={home} />
       {children}
-      {/* {!hideCommonCTA && (
-        <Fragment>
-          <CommonCTA />
-          <DividerLine hexColor={swoopColor} />
-        </Fragment>
-      )}
-      {!hideKeepInTheLoop && <KeepInTheLoop />} */}
       <Footer />
     </Fragment>
   );

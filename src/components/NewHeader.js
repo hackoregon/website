@@ -1,19 +1,14 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
-// import { useState } from "react";
 import { navigate, Link } from "gatsby";
-// import MenuIcon from "@material-ui/icons/Menu";
 import { Logo } from "@hackoregon/ui-brand";
 import { AnchorLink } from "gatsby-plugin-anchor-links";
+import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 
-// import HeaderDropdown from "./HeaderDropdown";
-// import AboutDropdown from "./AboutDropdown";
 import {
   colors,
   smBreak,
-  // mdBreak,
   xsBreak,
-  // focusBorder,
   maxContentWidth,
   noHover
 } from "../_Theme/UpdatedBrandTheme";
@@ -21,6 +16,7 @@ import {
 const headerHeight = "70px";
 const headerContainer = css`
   z-index: 100;
+  margin-top: 20px;
 `;
 const headerGrid = css`
   height: ${headerHeight};
@@ -43,14 +39,7 @@ const logoContainer = css`
 `;
 
 const NewHeader = () => {
-  // const [dropdownOpen, setDropdownOpen] = useState(false);
-
-  // const toggleDropdown = () => {
-  //   setDropdownOpen(!dropdownOpen);
-  // };
-
   const goTo = path => {
-    // setDropdownOpen(false);
     navigate(path);
   };
 
@@ -68,8 +57,8 @@ const NewHeader = () => {
             display: grid;
             grid-template-columns: repeat(4, auto);
             justify-self: end;
-            max-width: 600px;
-            width: 45vw;
+            max-width: 800px;
+            width: 60vw;
             justify-content: space-between;
             align-content: center;
 
@@ -86,14 +75,24 @@ const NewHeader = () => {
             `}
           >
             <AnchorLink to="/#about">
-              <h3
-                css={css`
-                  color: ${colors.primary.hex};
-                  margin: 0;
-                `}
-              >
-                About
-              </h3>
+              <div style={{ display: "flex" }}>
+                <ArrowRightIcon
+                  style={{
+                    fontSize: 60,
+                    marginLeft: "30px",
+                    marginRight: "-10px"
+                  }}
+                  htmlColor={colors.purple.hex}
+                />
+                <h3
+                  style={{
+                    color: colors.primary.hex,
+                    marginTop: "14px"
+                  }}
+                >
+                  About
+                </h3>
+              </div>
             </AnchorLink>
           </button>
 
@@ -104,16 +103,25 @@ const NewHeader = () => {
               margin: 0;
             `}
           >
-            {" "}
             <AnchorLink to="/#programs">
-              <h3
-                css={css`
-                  color: ${colors.primary.hex};
-                  margin: 0;
-                `}
-              >
-                Programs
-              </h3>
+              <div style={{ display: "flex" }}>
+                <ArrowRightIcon
+                  style={{
+                    fontSize: 60,
+                    marginLeft: "30px",
+                    marginRight: "-10px"
+                  }}
+                  htmlColor={colors.pink.hex}
+                />
+                <h3
+                  style={{
+                    color: colors.primary.hex,
+                    marginTop: "14px"
+                  }}
+                >
+                  Programs
+                </h3>
+              </div>
             </AnchorLink>
           </button>
 
@@ -125,14 +133,24 @@ const NewHeader = () => {
             `}
           >
             <AnchorLink to="/#team">
-              <h3
-                css={css`
-                  color: ${colors.primary.hex};
-                  margin: 0;
-                `}
-              >
-                Team
-              </h3>
+              <div style={{ display: "flex" }}>
+                <ArrowRightIcon
+                  style={{
+                    fontSize: 60,
+                    marginLeft: "30px",
+                    marginRight: "-10px"
+                  }}
+                  htmlColor={colors.yellow.hex}
+                />
+                <h3
+                  style={{
+                    color: colors.primary.hex,
+                    marginTop: "14px"
+                  }}
+                >
+                  Team
+                </h3>
+              </div>
             </AnchorLink>
           </button>
 
@@ -146,52 +164,26 @@ const NewHeader = () => {
               goTo("/#apply");
             }}
           >
-            <h3
-              css={css`
-                color: ${colors.primary.hex};
-                margin: 0;
-              `}
-            >
-              Get Involved
-            </h3>
+            <div style={{ display: "flex" }}>
+              <ArrowRightIcon
+                style={{
+                  fontSize: 60,
+                  marginLeft: "30px",
+                  marginRight: "-10px"
+                }}
+                htmlColor={colors.green.hex}
+              />
+              <h3
+                style={{
+                  color: colors.primary.hex,
+                  marginTop: "14px"
+                }}
+              >
+                Get Involved
+              </h3>
+            </div>
           </button>
-          {/* <AboutDropdown goTo={goTo} /> */}
         </div>
-
-        {/* <button
-          css={css`
-            display: flex;
-            flex-direction: column;
-            justify-self: end;
-            justify-content: center;
-            background: none;
-            border: none;
-            height: max-content;
-            align-self: center;
-            border-radius: 5px;
-            color: white;
-
-            ${focusBorder}
-
-            ${mdBreak} {
-              display: none;
-            }
-          `}
-          type="button"
-          onClick={toggleDropdown}
-        >
-          <MenuIcon
-            css={css`
-              font-size: 2.5rem;
-            `}
-          />
-        </button>
-      </div>
-      <HeaderDropdown
-        open={dropdownOpen}
-        headerHeight={headerHeight}
-        goTo={goTo}
-      /> */}
       </div>
     </div>
   );

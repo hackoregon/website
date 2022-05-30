@@ -11,10 +11,11 @@ const Splash = () => (
       flex-direction: row;
       background-image: url("/images/splash_portrait.png");
       background-repeat: no-repeat;
-      background-size: 140px auto;
+      background-size: 150px auto;
       background-position: left bottom;
       margin-top: 40px;
-      padding-bottom: 40px;
+      padding-bottom: 60px;
+      border-bottom: 6px solid ${colors.primary.hex};
     `}
   >
     <div
@@ -27,6 +28,7 @@ const Splash = () => (
           margin-top: 0;
           margin-bottom: 1rem;
           margin-left: 60px;
+          font-size: 3rem;
         `}
       >
         All Data <br /> Are Created.
@@ -34,23 +36,17 @@ const Splash = () => (
       <h3
         css={css`
           margin-left: 140px;
+          margin-top: 0;
         `}
       >
         Put your principles into practice.
       </h3>
-      {/* <img
-          src="/images/splash_portrait.png"
-          alt="a stylized illustration of a person"
-          css={css`
-            width: 200px;
-            height: auto;
-            z-index: 1;
-          `}
-        /> */}
     </div>
     <div
       css={css`
-        margin: 20px 20px 0 20px;
+        margin: 20px 20px 0 0;
+        padding-left: 40px;
+        border-left: 2px solid ${colors.primary.hex};
       `}
     >
       <h2
@@ -62,7 +58,13 @@ const Splash = () => (
       >
         Context-Aware Systems
       </h2>
-      <h3 css={css``}>Learn more about the methodology</h3>
+      <h3
+        css={css`
+          margin-top: 0;
+        `}
+      >
+        Learn more about the methodology
+      </h3>
       <Link to="/platform/" className="btn-pink">
         <p>Discover Modules</p>
       </Link>

@@ -3,6 +3,7 @@ import { jsx } from "@emotion/core";
 import PageLayout from "../components/PageLayout";
 import Splash from "./Home/Splash";
 import AboutBlock from "./Home/AboutBlock";
+import ProgramAreas from "./Home/ProgramAreas";
 import { colors } from "../_Theme/UpdatedBrandTheme";
 
 const IndexPage = () => {
@@ -16,6 +17,7 @@ const IndexPage = () => {
       <Splash />
 
       <AboutBlock />
+      <ProgramAreas />
     </PageLayout>
   );
 };
