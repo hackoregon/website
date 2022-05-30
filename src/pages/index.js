@@ -15,7 +15,6 @@ const IndexPage = () => {
       hideCommonCTA
     >
       <Splash />
-
       <AboutBlock />
       <ProgramAreas />
     </PageLayout>

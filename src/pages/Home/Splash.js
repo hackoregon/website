@@ -6,10 +6,11 @@ import { colors } from "../../_Theme/UpdatedBrandTheme";
 
 const Splash = () => (
   <GridSingle
+    wideContent
     containerStyle={css`
       display: flex;
       flex-direction: row;
-      background-image: url("/images/splash_portrait.png");
+      background-image: url("images/splash_portrait.png");
       background-repeat: no-repeat;
       background-size: 150px auto;
       background-position: left bottom;
@@ -27,7 +28,7 @@ const Splash = () => (
         css={css`
           margin-top: 0;
           margin-bottom: 1rem;
-          margin-left: 60px;
+          margin-left: 140px;
           font-size: 3rem;
         `}
       >
