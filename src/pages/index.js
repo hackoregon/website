@@ -2,11 +2,7 @@
 import { jsx } from "@emotion/core";
 import PageLayout from "../components/PageLayout";
 import Splash from "./Home/Splash";
-import Teaser from "./Home/Teaser";
-import CallToActionBlocks from "./Home/CallToActionBlocks";
-import WorldTour from "./Home/WorldTour";
-import ContributorCTA from "./Collaboration/ContributorCTA";
-import DividerLine from "../components/DividerLine";
+import AboutBlock from "./Home/AboutBlock";
 import { colors } from "../_Theme/UpdatedBrandTheme";
 
 const IndexPage = () => {
@@ -19,17 +15,7 @@ const IndexPage = () => {
     >
       <Splash />
 
-      <Teaser />
-      <DividerLine hexColor={colors.blue.hex} />
-
-      <WorldTour />
-      <DividerLine hexColor={colors.pink.hex} />
-
-      <CallToActionBlocks noDivider />
-      <DividerLine hexColor={colors.yellow.hex} />
-
-      <ContributorCTA />
-      <DividerLine hexColor={colors.green.hex} />
+      <AboutBlock />
     </PageLayout>
   );
 };

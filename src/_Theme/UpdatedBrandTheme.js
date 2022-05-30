@@ -591,5 +591,33 @@ export default {
     "> p": {
       color: "white"
     }
+  },
+
+  ".about-sidebar": {
+    color: `${colors.primary.hex}`,
+    fontSize: "20px",
+    fontWeight: "bold",
+    display: "flex",
+    flexDirection: "column",
+    justifyItems: "center"
+  },
+  ".sidebar-item": {
+    paddingTop: "30px",
+    paddingRight: "30px",
+    marginTop: "auto",
+    flex: "1",
+    display: "flex"
+  },
+  ".sidebar-green:hover": {
+    background: "rgba(25, 183, 170, 0.5)"
+  },
+  ".sidebar-pink:hover": {
+    background: "rgba(220, 69, 86, 0.5)"
+  },
+  ".sidebar-yellow:hover": {
+    background: "rgba(255, 178, 31, 0.5)"
+  },
+  ".sidebar-purple:hover": {
+    background: "rgba(114, 29, 124, 0.5)"
   }
 };

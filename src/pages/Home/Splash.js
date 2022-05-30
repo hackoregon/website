@@ -1,75 +1,73 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
-import { useStaticQuery, graphql } from "gatsby";
-
-import { smBreak, colors } from "../../_Theme/UpdatedBrandTheme";
+import { Link } from "gatsby";
 import GridSingle from "../../components/GridSingle";
-import TitleAreaNew from "../../components/TitleAreaNew";
+import { colors } from "../../_Theme/UpdatedBrandTheme";
 
-const Splash = () => {
-  const { contentfulHeading } = useStaticQuery(graphql`
-    query {
-      contentfulHeading(contentful_id: { eq: "3Hy2d9lrRRmragYcOSoDl3" }) {
-        subtitle
-        title
-      }
-    }
-  `);
-
-  return (
-    <TitleAreaNew showHeaderImage>
-      <GridSingle
-        containerStyle={css`
-          width: 100%;
-          padding: 0;
-          display: flex;
-          flex-direction: column;
+const Splash = () => (
+  <GridSingle
+    containerStyle={css`
+      display: flex;
+      flex-direction: row;
+      background-image: url("/images/splash_portrait.png");
+      background-repeat: no-repeat;
+      background-size: 140px auto;
+      background-position: left bottom;
+      margin-top: 40px;
+      padding-bottom: 40px;
+    `}
+  >
+    <div
+      css={css`
+        margin: 20px 20px 0 20px;
+      `}
+    >
+      <h2
+        css={css`
+          margin-top: 0;
+          margin-bottom: 1rem;
+          margin-left: 60px;
         `}
-        wideContent
       >
-        <h2
-          className="h-1"
+        All Data <br /> Are Created.
+      </h2>
+      <h3
+        css={css`
+          margin-left: 140px;
+        `}
+      >
+        Put your principles into practice.
+      </h3>
+      {/* <img
+          src="/images/splash_portrait.png"
+          alt="a stylized illustration of a person"
           css={css`
-            margin-top: 0;
-            margin-bottom: 1rem;
-            max-width: 900px;
-            display: block;
-            justify-self: left;
-            color: ${colors.subdued.hex};
-            ${smBreak} {
-              max-width: 4000px;
-            }
+            width: 200px;
+            height: auto;
+            z-index: 1;
           `}
-        >
-          <div>
-            <span>{contentfulHeading.title}</span>
-          </div>
-        </h2>
-        <h3
-          css={css`
-            max-width: 900px;
-            display: block;
-            margin: 0;
-            justify-self: left;
-            ${smBreak} {
-              max-width: 4000px;
-            }
-          `}
-        >
-          <div>
-            <span
-              className="h-3"
-              css={css`
-                color: ${colors.subdued.hex};
-              `}
-            >
-              {contentfulHeading.subtitle}
-            </span>
-          </div>
-        </h3>
-      </GridSingle>
-    </TitleAreaNew>
-  );
-};
+        /> */}
+    </div>
+    <div
+      css={css`
+        margin: 20px 20px 0 20px;
+      `}
+    >
+      <h2
+        css={css`
+          margin-top: 0;
+          margin-bottom: 1rem;
+          color: ${colors.pink.hex};
+        `}
+      >
+        Context-Aware Systems
+      </h2>
+      <h3 css={css``}>Learn more about the methodology</h3>
+      <Link to="/platform/" className="btn-pink">
+        <p>Discover Modules</p>
+      </Link>
+    </div>
+  </GridSingle>
+);
 
 export default Splash;
