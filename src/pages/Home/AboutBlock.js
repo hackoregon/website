@@ -8,7 +8,7 @@ import { jsx, css } from "@emotion/core";
 import { Fragment, useState } from "react";
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 import { Link } from "gatsby";
-// import { StaticImage } from "gatsby-plugin-image"
+import { StaticImage } from "gatsby-plugin-image";
 import { Logo } from "@hackoregon/ui-brand";
 
 import { colors } from "../../_Theme/UpdatedBrandTheme";
@@ -90,7 +90,7 @@ const CategoryContent = ({ title, content, image, ctaUrl, ctaText }) => {
             </Link>
           </div>
           <div style={{ flexBasis: "40%" }}>
-            <img
+            <StaticImage
               src={image}
               alt=""
               style={{
