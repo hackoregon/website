@@ -109,7 +109,7 @@ const ProgramAreas = () => {
       </GridSingle>
       <GridSingle
         containerStyle={css`
-          padding-bottom: 120px;
+          padding-bottom: 20px;
         `}
       >
         {contentfulContentList.content.map(content => (

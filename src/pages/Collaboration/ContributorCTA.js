@@ -65,6 +65,7 @@ const ContributorCTA = () => {
                 css={css`
                   justify-self: end;
                   margin-top: 20px;
+                  margin-bottom: 80px;
                 `}
               >
                 <p>{contentfulCallToActionBlock.button}</p>
