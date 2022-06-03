@@ -1,3 +1,4 @@
+/* eslint-disable graphql/template-strings */
 /* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
@@ -22,9 +23,9 @@ const categoryMap = {
 };
 
 const imageStyle = css`
-marginLeft: "20px",
-marginTop: "-40px",
-maxWidth: "200px"
+  marginLeft: "20px",
+  marginTop: "-40px",
+  maxWidth: "200px"
 
   ${xsBreak} {
     width: 100%;
@@ -100,7 +101,7 @@ const AboutBlock = () => {
               }
               extraContentImage {
                 description
-                fluid(maxWidth: 280) {
+                fluid(maxHeight: 200) {
                   srcSet
                   sizes
                 }
@@ -155,9 +156,12 @@ const AboutBlock = () => {
             overflow-y: scroll;
           `}
         >
-          {getCategoryData().detailImage}
           <h2 style={{ marginLeft: "20px" }}>{getCategoryData().tagline}</h2>
-          <div style={{ paddingRight: "30px" }}>
+          <div style={{ textAlign: "center" }}>
+            {getCategoryData().extraContentImage &&
+              makeImage(getCategoryData().extraContentImage)}
+          </div>
+          <div style={{ marginTop: "30px", paddingRight: "30px" }}>
             {documentToReactComponents(
               getCategoryData().extraContent &&
                 getCategoryData().extraContent.json
