@@ -132,7 +132,7 @@ const NewHeader = () => {
               margin: 0;
             `}
           >
-            <AnchorLink to="/#team">
+            <AnchorLink to="/about">
               <div style={{ display: "flex" }}>
                 <ArrowRightIcon
                   style={{

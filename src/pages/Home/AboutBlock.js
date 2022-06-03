@@ -5,52 +5,45 @@
 /* eslint-disable react/prop-types */
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
+import { useStaticQuery, graphql } from "gatsby";
 import { Fragment, useState } from "react";
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";
-import { Link } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
+import { Modal } from "@material-ui/core";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { Logo } from "@hackoregon/ui-brand";
-
-import { colors } from "../../_Theme/UpdatedBrandTheme";
-
+import { colors, xsBreak } from "../../_Theme/UpdatedBrandTheme";
 import GridSingle from "../../components/GridSingle";
 
-const categories = {
-  brandPromise: {
-    title: "Our Brand Promise",
-    content:
-      "As a 501 (c)(3) nonprofit CIVIC only accepts projects which are aligned with our organizational mission to serve diverse and equitable constituencies, and where the ownership of technology remains open-source or in the custodianship of the public sector. We operate as a collective of global practitioners that borrow from industry-standard practices which are specifically adapted to re-center value in the public interest and support a vision of delivering competitive software that stands in contrast to predominant models of extraction and/or venture-backed economies of scale.",
-    image: "../../../images/about_brandPromise.png",
-    ctaUrl: "http://www.example.com",
-    ctaText: "Read full text >>"
-  },
-  civicPlatform: {
-    title: "CIVIC Platform",
-    content:
-      "We build and maintain our own open source platorm ecosystem and developer enviornment to support, scale, continuity, and best  practices for altruistic data infrastructure where the “bottom line” serves people, not profit. ",
-    image: "../../../images/about_civicPlatform.png",
-    ctaUrl: "http://www.example.com",
-    ctaText: "Peek under the hood >>"
-  },
-  altruisticLifecycle: {
-    title: "Altruistic Lifecycle",
-    content:
-      "Creating values-based technnology impacts every stage development, and CIVIC takes extra consideration     to build momentum for sucess from day zero.  Over years of work,  we’ve distilled six elements which are essential to bring together the best teams, promote overall project health, and deliver repeat magic when your goal is to authenitically serve the public interest.",
-    image: "../../../images/about_altruisticLifecycle.png",
-    ctaUrl: "http://www.example.com",
-    ctaText: "See the elements >>"
-  },
-  fundingStrategies: {
-    title: "Funding Strategies",
-    content:
-      "CIVIC is primarily revenue funded through an institutional membership model and project implementations and government, accademic, and other partners who are commited to a vision of technology as  a public service.  Grants help us invest in new innovation areas, expand education activities, or take on meaningful challenges where traditional funding isn’t available.  All of our earned income is cycled back into growing and deepening our community of contributors fostering experimentation, research,  and connection.",
-    image: "../../../images/about_fundingStrategies.png",
-    ctaUrl: "http://www.example.com",
-    ctaText: "How we reinvest >>"
-  }
+const categoryMap = {
+  brandPromise: "1797e17c-2e73-516a-af78-189459bfcbb7",
+  civicPlatform: "99bc9210-d0f1-57bb-86a6-89c4705248d6",
+  altruisticLifecycle: "7c6917e1-a3ef-561f-86b6-83d3fbb52327",
+  fundingStrategies: "1b57e49b-b5c8-5e77-9b82-1ccd2162942d"
 };
 
-const CategoryContent = ({ title, content, image, ctaUrl, ctaText }) => {
+const imageStyle = css`
+marginLeft: "20px",
+marginTop: "-40px",
+maxWidth: "200px"
+
+  ${xsBreak} {
+    width: 100%;
+    max-width: 400px;
+  }
+`;
+
+const makeImage = image => (
+  <img
+    srcSet={image.fluid.srcSet}
+    sizes={image.fluid.sizes}
+    alt={image.description}
+    css={imageStyle}
+  />
+);
+
+const CategoryContent = ({ title, content, image, ctaOnClick, ctaText }) => {
+  const categoryImage = image && makeImage(image);
+
   return (
     <div
       css={css`
@@ -75,31 +68,13 @@ const CategoryContent = ({ title, content, image, ctaUrl, ctaText }) => {
           <h2 style={{ marginLeft: "20px" }}>{title}</h2>
         </div>
         <div style={{ display: "flex", flexDirection: "row" }}>
-          <div style={{ maxWidth: "550px" }}>
-            {content}
-            <Link
-              to={ctaUrl}
-              style={{
-                color: colors.blue.hex,
-                fontWeight: "bold",
-                fontSize: "20px"
-              }}
-            >
-              <br />
-              <span>{ctaText}</span>
-            </Link>
+          <div className="aboutBlock" style={{ paddingRight: "30px" }}>
+            {documentToReactComponents(content)}
+            <div type="button" onClick={ctaOnClick}>
+              <a>{ctaText}</a>
+            </div>
           </div>
-          <div style={{ flexBasis: "40%" }}>
-            <StaticImage
-              src={image}
-              alt=""
-              style={{
-                marginLeft: "20px",
-                marginTop: "-40px",
-                maxWidth: "100%"
-              }}
-            />
-          </div>
+          {categoryImage}
         </div>
       </div>
     </div>
@@ -108,10 +83,88 @@ const CategoryContent = ({ title, content, image, ctaUrl, ctaText }) => {
 
 const AboutBlock = () => {
   const [selectedCategory, setSelectedCategory] = useState("brandPromise");
+  const [showDetailPopover, setShowDetailPopover] = useState(false);
+
+  const { contentfulContentList } = useStaticQuery(
+    graphql`
+      query {
+        contentfulContentList(contentful_id: { eq: "75b0gvStvQr8lG3upiW1bu" }) {
+          content {
+            ... on ContentfulCallToActionBlock {
+              id
+              button
+              buttonLocalLink
+              tagline
+              extraContent {
+                json
+              }
+              extraContentImage {
+                description
+                fluid(maxWidth: 280) {
+                  srcSet
+                  sizes
+                }
+              }
+              summary {
+                json
+              }
+              image {
+                description
+                fluid(maxWidth: 280) {
+                  srcSet
+                  sizes
+                }
+              }
+            }
+          }
+        }
+      }
+    `
+  );
+
+  const categories = contentfulContentList.content;
+
+  const getCategoryData = () => {
+    return categories.filter(
+      category => category.id === categoryMap[selectedCategory]
+    )[0];
+  };
+
+  const toggleDetailPopover = () => {
+    setShowDetailPopover(!showDetailPopover);
+  };
 
   return (
     <Fragment>
       <a id="about" />
+      <Modal id="modal" open={showDetailPopover} onClose={toggleDetailPopover}>
+        <div
+          css={css`
+            color: ${colors.primary.hex};
+            background: ${colors.white};
+            outline: 0;
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -30%);
+            width: 70vw;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            max-height: 70vh;
+            overflow-y: scroll;
+          `}
+        >
+          {getCategoryData().detailImage}
+          <h2 style={{ marginLeft: "20px" }}>{getCategoryData().tagline}</h2>
+          <div style={{ paddingRight: "30px" }}>
+            {documentToReactComponents(
+              getCategoryData().extraContent &&
+                getCategoryData().extraContent.json
+            )}
+          </div>
+        </div>
+      </Modal>
       <GridSingle
         wideContent
         containerStyle={css`
@@ -183,11 +236,11 @@ const AboutBlock = () => {
         </div>
         {/* content area */}
         <CategoryContent
-          title={categories[selectedCategory].title}
-          content={categories[selectedCategory].content}
-          image={categories[selectedCategory].image}
-          ctaText={categories[selectedCategory].ctaText}
-          ctaUrl={categories[selectedCategory].ctaUrl}
+          title={getCategoryData().tagline}
+          content={getCategoryData().summary && getCategoryData().summary.json}
+          image={getCategoryData().image}
+          ctaText={getCategoryData().button}
+          ctaOnClick={toggleDetailPopover}
         />
       </GridSingle>
     </Fragment>

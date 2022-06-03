@@ -593,6 +593,12 @@ export default {
     }
   },
 
+  ".aboutBlock": {
+    "> p": {
+      color: "white"
+    }
+  },
+
   ".about-sidebar": {
     color: `${colors.primary.hex}`,
     fontSize: "20px",
