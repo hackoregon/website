@@ -96,6 +96,7 @@ const AboutBlock = () => {
               button
               buttonLocalLink
               tagline
+              extraContentTagline
               extraContent {
                 json
               }
@@ -156,7 +157,9 @@ const AboutBlock = () => {
             overflow-y: scroll;
           `}
         >
-          <h2 style={{ marginLeft: "20px" }}>{getCategoryData().tagline}</h2>
+          <h2 style={{ marginLeft: "20px" }}>
+            {getCategoryData().extraContentTagline}
+          </h2>
           <div style={{ textAlign: "center" }}>
             {getCategoryData().extraContentImage &&
               makeImage(getCategoryData().extraContentImage)}

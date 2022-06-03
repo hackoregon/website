@@ -1,9 +1,13 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable react/prop-types */
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
-import { Link } from "gatsby";
+// import { Link } from "gatsby";
+import { useState } from "react";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-
+import { Modal } from "@material-ui/core";
 import { colors, xsBreak } from "../_Theme/UpdatedBrandTheme";
 
 const imageStyle = css`
@@ -37,11 +41,47 @@ const ProgramAreaBlock = ({
   image,
   summary,
   button,
-  buttonLocalLink
+  // buttonLocalLink,
+  extraContentTagline,
+  extraContentImage,
+  extraContent
 }) => {
   const programImage = image && makeImage(image);
+  const [showDetailPopover, setShowDetailPopover] = useState(false);
+
+  const toggleDetailPopover = () => {
+    setShowDetailPopover(!showDetailPopover);
+  };
+
   return (
     <div>
+      <Modal id="modal" open={showDetailPopover} onClose={toggleDetailPopover}>
+        <div
+          css={css`
+            color: ${colors.primary.hex};
+            background: ${colors.white};
+            outline: 0;
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -30%);
+            width: 70vw;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            max-height: 70vh;
+            overflow-y: scroll;
+          `}
+        >
+          <h2 style={{ marginLeft: "20px" }}>{extraContentTagline}</h2>
+          <div style={{ textAlign: "center" }}>
+            {extraContentImage && makeImage(extraContentImage)}
+          </div>
+          <div style={{ marginTop: "30px", paddingRight: "30px" }}>
+            {documentToReactComponents(extraContent && extraContent.json)}
+          </div>
+        </div>
+      </Modal>
       <div
         style={{
           display: "flex",
@@ -75,7 +115,7 @@ const ProgramAreaBlock = ({
               {documentToReactComponents(summary)}
             </div>
           )}
-          {button && buttonLocalLink && (
+          {/* {button && buttonLocalLink && (
             <Link
               to={`${buttonLocalLink}`}
               className="btn-pink"
@@ -85,7 +125,17 @@ const ProgramAreaBlock = ({
             >
               <p>{button}</p>
             </Link>
-          )}
+          )} */}
+          <div
+            type="button"
+            className="btn-pink"
+            style={{
+              marginTop: "2rem"
+            }}
+            onClick={toggleDetailPopover}
+          >
+            <p>{button}</p>
+          </div>
         </div>
       </div>
     </div>

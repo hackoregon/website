@@ -23,6 +23,17 @@ const ProgramAreas = () => {
               summary {
                 json
               }
+              extraContentTagline
+              extraContent {
+                json
+              }
+              extraContentImage {
+                description
+                fluid(maxHeight: 200) {
+                  srcSet
+                  sizes
+                }
+              }
               image {
                 description
                 fluid(maxWidth: 600) {
@@ -108,6 +119,9 @@ const ProgramAreas = () => {
             button={content.button}
             buttonLocalLink={content.buttonLocalLink}
             image={content.image}
+            extraContentTagline={content.extraContentTagline}
+            extraContent={content.extraContent}
+            extraContentImage={content.extraContentImage}
           />
         ))}
       </GridSingle>
