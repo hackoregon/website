@@ -57,24 +57,40 @@ const CategoryContent = ({ title, content, image, ctaOnClick, ctaText }) => {
         overflow: hidden;
       `}
     >
-      <div>
-        <div
-          style={{
-            display: "flex",
-            marginBottom: "10px",
-            alignItems: "center"
-          }}
-        >
-          <Logo type="squareLogoInverted" />
-          <h2 style={{ marginLeft: "20px" }}>{title}</h2>
-        </div>
-        <div style={{ display: "flex", flexDirection: "row" }}>
-          <div className="aboutBlock" style={{ paddingRight: "30px" }}>
+      <div
+        style={{
+          position: "relative",
+          width: "100%",
+          display: "flex"
+        }}
+      >
+        <div>
+          <div
+            style={{
+              display: "flex",
+              marginBottom: "10px",
+              alignItems: "center"
+            }}
+          >
+            <Logo type="squareLogoInverted" />
+            <h2 style={{ marginLeft: "20px" }}>{title}</h2>
+          </div>
+          <div
+            className="aboutBlock"
+            style={{ paddingRight: "30px", maxWidth: "510px" }}
+          >
             {documentToReactComponents(content)}
             <div type="button" onClick={ctaOnClick}>
               <a>{ctaText}</a>
             </div>
           </div>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center"
+          }}
+        >
           {categoryImage}
         </div>
       </div>
