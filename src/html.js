@@ -19,6 +19,10 @@ export default function HTML(props) {
           data-site="BHOOJZBT"
           defer
         />
+        <link
+          href="https://fonts.googleapis.com/css?family=Rubik"
+          rel="stylesheet"
+        />
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
