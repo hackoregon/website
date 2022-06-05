@@ -70,7 +70,7 @@ export const underlineFocus = {
 
 // Typography
 const body = {
-  fontFamily: `system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+  fontFamily: `Rubik, Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
   fontSize: "1.0625rem",
   lineHeight: "1.765rem",
   margin: 0,
@@ -158,7 +158,7 @@ const input = {
 
 const action = {
   ...p,
-  fontFamily: `-apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+  fontFamily: `Rubik, Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
   fontStyle: "normal",
   fontWeight: 500,
   fontSize: "1.25rem"
@@ -167,7 +167,7 @@ const action = {
 const h1 = {
   fontSize: "4rem",
   lineHeight: "1.0375",
-  fontFamily: `-apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+  fontFamily: `Rubik, Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
   fontWeight: 800,
   marginBlockStart: "4rem",
   marginBlockEnd: "4rem",
@@ -186,7 +186,7 @@ const h1 = {
 const h2 = {
   fontSize: "2.5rem",
   lineHeight: "1.10722",
-  fontFamily: `-apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+  fontFamily: `Rubik, Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
   fontWeight: 900,
   marginBlockStart: "2rem",
   marginBlockEnd: "2rem",
@@ -201,7 +201,7 @@ const h2 = {
 export const h2Subtitle = {
   fontSize: "2.5rem",
   lineHeight: "1.10722",
-  fontFamily: `-apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+  fontFamily: `Rubik, Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
   fontWeight: 1000,
   marginBlockStart: "2rem",
   marginBlockEnd: "2rem",
@@ -220,7 +220,7 @@ export const h2Subtitle = {
 const h3 = {
   fontSize: "1.5rem",
   lineHeight: "1.381",
-  fontFamily: `-apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+  fontFamily: `Rubik, Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
   fontWeight: 600,
   color: colors.plumLight.hex,
   marginBlockStart: "1.5rem",
@@ -235,7 +235,7 @@ const h3 = {
 const h4 = {
   fontSize: "1.25rem",
   lineHeight: "1.381",
-  fontFamily: `-apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+  fontFamily: `Rubik, Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
   fontWeight: "400",
   marginBlockStart: "1.25rem",
   marginBlockEnd: "1.25rem",
@@ -249,7 +249,7 @@ const h4 = {
 const h5 = {
   fontSize: "1rem",
   lineHeight: "1.125rem",
-  fontFamily: `-apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+  fontFamily: `Rubik, Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
   fontWeight: "400",
   marginBlockStart: "1rem",
   marginBlockEnd: "1rem"
@@ -258,7 +258,7 @@ const h5 = {
 const h6 = {
   fontSize: "1rem",
   lineHeight: "0.9375rem",
-  fontFamily: `-apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+  fontFamily: `Rubik, Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
   fontWeight: "300",
   marginBlockStart: "1rem",
   marginBlockEnd: "1rem"
@@ -276,19 +276,19 @@ const code = {
 };
 
 const dataSmall = {
-  fontFamily: `-apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+  fontFamily: `Rubik, Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
   fontSize: "0.86rem",
   lineHeight: "1.204rem"
 };
 
 const data = {
-  fontFamily: `-apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+  fontFamily: `Rubik, Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
   fontSize: "1rem",
   lineHeight: "1.4rem"
 };
 
 const dataLarge = {
-  fontFamily: `-apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+  fontFamily: `Rubik, Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
   fontSize: "1.14rem",
   lineHeight: "1.596rem"
 };
@@ -351,7 +351,7 @@ export default {
     fontSize: "1rem",
     lineHeight: "1.425",
     backgroundColor: BrandColors.background.hex,
-    fontFamily: `-apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+    fontFamily: `Rubik, Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
     fontWeight: "400",
     color: BrandColors.primary.hex,
     minHeight: "100%" /* [3] */,
@@ -467,18 +467,18 @@ export default {
     fontSize: "3.57rem",
     lineHeight: "1.2",
     fontWeight: "300",
-    fontFamily: `-apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+    fontFamily: `Rubik, Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
     marginBottom: "12px"
   },
 
   ".DataText": {
-    fontFamily: `-apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+    fontFamily: `Rubik, Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
     fontSize: "0.86rem",
     lineHeight: "1.204rem"
   },
 
   ".DataFont": {
-    fontFamily: `-apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`
+    fontFamily: `Rubik, Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`
   },
 
   ".LargeParagraph": pLarge,
