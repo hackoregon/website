@@ -405,7 +405,14 @@ export default {
   ".a": a,
 
   ".btn": button,
-  ".btn-pink": button,
+  ".btn-pink": {
+    ...button,
+    boxShadow: `6px 6px 0px ${VisualizationColors.categorical.pink.hex}`,
+    "&:hover,:focus": {
+      cursor: "pointer",
+      boxShadow: `3px 3px 0px ${VisualizationColors.categorical.pink.hex}`
+    }
+  },
   ".btn-blue": {
     ...button,
     boxShadow: `6px 6px 0px ${VisualizationColors.categorical.blue.hex}`,

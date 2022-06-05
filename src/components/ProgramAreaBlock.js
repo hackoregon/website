@@ -44,7 +44,8 @@ const ProgramAreaBlock = ({
   // buttonLocalLink,
   extraContentTagline,
   extraContentImage,
-  extraContent
+  extraContent,
+  buttonColor
 }) => {
   const programImage = image && makeImage(image);
   const [showDetailPopover, setShowDetailPopover] = useState(false);
@@ -128,7 +129,7 @@ const ProgramAreaBlock = ({
           )} */}
           <div
             type="button"
-            className="btn-pink"
+            className={`btn-${buttonColor}`}
             style={{
               marginTop: "2rem"
             }}

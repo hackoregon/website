@@ -9,6 +9,8 @@ import { colors } from "../../_Theme/UpdatedBrandTheme";
 import GridSingle from "../../components/GridSingle";
 import ProgramAreaBlock from "../../components/ProgramAreaBlock";
 
+const colorOrder = ["yellow", "pink", "green", "blue", "yellow", "pink"];
+
 const ProgramAreas = () => {
   const { contentfulContentList } = useStaticQuery(
     graphql`
@@ -112,7 +114,7 @@ const ProgramAreas = () => {
           padding-bottom: 20px;
         `}
       >
-        {contentfulContentList.content.map(content => (
+        {contentfulContentList.content.map((content, i) => (
           <ProgramAreaBlock
             tagline={content.tagline}
             summary={content.summary && content.summary.json}
@@ -122,6 +124,7 @@ const ProgramAreas = () => {
             extraContentTagline={content.extraContentTagline}
             extraContent={content.extraContent}
             extraContentImage={content.extraContentImage}
+            buttonColor={colorOrder[i]}
           />
         ))}
       </GridSingle>
