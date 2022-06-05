@@ -87,13 +87,36 @@ const ProgramAreaBlock = ({
         style={{
           display: "flex",
           height: "auto",
+          minHeight: "420px",
           margin: "20px 0",
           padding: "20px",
           background: "#EEE",
-          boxShadow: "6px 6px 0px #ccc"
+          boxShadow: "6px 6px 0px #ccc",
+          position: "relative"
         }}
       >
-        <div>{programImage}</div>
+        {" "}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column"
+          }}
+        >
+          <div>{programImage}</div>
+          <div
+            type="button"
+            className={`btn-${buttonColor}`}
+            style={{
+              marginTop: "2rem",
+              position: "absolute",
+              bottom: "20px",
+              left: "20px"
+            }}
+            onClick={toggleDetailPopover}
+          >
+            <p>{button}</p>
+          </div>
+        </div>
         <div
           style={{
             display: "flex",
@@ -127,16 +150,6 @@ const ProgramAreaBlock = ({
               <p>{button}</p>
             </Link>
           )} */}
-          <div
-            type="button"
-            className={`btn-${buttonColor}`}
-            style={{
-              marginTop: "2rem"
-            }}
-            onClick={toggleDetailPopover}
-          >
-            <p>{button}</p>
-          </div>
         </div>
       </div>
     </div>
