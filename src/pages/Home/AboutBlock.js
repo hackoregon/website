@@ -22,23 +22,11 @@ const categoryMap = {
   fundingStrategies: "1b57e49b-b5c8-5e77-9b82-1ccd2162942d"
 };
 
-const imageStyle = css`
-  marginLeft: "20px",
-  marginTop: "-40px",
-  maxWidth: "200px"
-
-  ${xsBreak} {
-    width: 100%;
-    max-width: 400px;
-  }
-`;
-
 const makeImage = image => (
   <img
     srcSet={image.fluid.srcSet}
     sizes={image.fluid.sizes}
     alt={image.description}
-    css={imageStyle}
   />
 );
 
@@ -55,6 +43,10 @@ const CategoryContent = ({ title, content, image, ctaOnClick, ctaText }) => {
         max-width: 900px;
         max-height: 450px;
         overflow: hidden;
+        ${xsBreak} {
+          max-height: fit-content;
+          padding-bottom: 20px;
+        }
       `}
     >
       <div
@@ -86,10 +78,13 @@ const CategoryContent = ({ title, content, image, ctaOnClick, ctaText }) => {
           </div>
         </div>
         <div
-          style={{
-            display: "flex",
-            alignItems: "center"
-          }}
+          css={css`
+            display: flex;
+            align-items: center;
+            ${xsBreak} {
+              display: none;
+            }
+          `}
         >
           {categoryImage}
         </div>
@@ -196,6 +191,12 @@ const AboutBlock = () => {
           grid-template-columns: 200px auto;
           height: 450px;
           border-bottom: 6px solid ${colors.green.hex};
+
+          ${xsBreak} {
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            margin-top: 10px;
         `}
       >
         {/* sidebar buttons */}
@@ -209,10 +210,10 @@ const AboutBlock = () => {
             onClick={() => setSelectedCategory("brandPromise")}
           >
             <ArrowRightIcon
-              style={{ fontSize: 60 }}
+              style={{ fontSize: 60, alignSelf: "center" }}
               htmlColor={colors.green.hex}
             />
-            <span>Brand Promise</span>
+            <span style={{ alignSelf: "center" }}>Brand Promise</span>
           </div>
           <div
             className={
@@ -223,10 +224,10 @@ const AboutBlock = () => {
             onClick={() => setSelectedCategory("civicPlatform")}
           >
             <ArrowRightIcon
-              style={{ fontSize: 60 }}
+              style={{ fontSize: 60, alignSelf: "center" }}
               htmlColor={colors.pink.hex}
             />
-            <span>CIVIC Platform</span>
+            <span style={{ alignSelf: "center" }}>CIVIC Platform</span>
           </div>
           <div
             className={
@@ -237,10 +238,10 @@ const AboutBlock = () => {
             onClick={() => setSelectedCategory("altruisticLifecycle")}
           >
             <ArrowRightIcon
-              style={{ fontSize: 60 }}
+              style={{ fontSize: 60, alignSelf: "center" }}
               htmlColor={colors.yellow.hex}
             />
-            <span>Altruistic Lifecycle</span>
+            <span style={{ alignSelf: "center" }}>Altruistic Lifecycle</span>
           </div>
           <div
             className={
@@ -251,10 +252,10 @@ const AboutBlock = () => {
             onClick={() => setSelectedCategory("fundingStrategies")}
           >
             <ArrowRightIcon
-              style={{ fontSize: 60 }}
+              style={{ fontSize: 60, alignSelf: "center" }}
               htmlColor={colors.purple.hex}
             />
-            <span>Funding Strategies</span>
+            <span style={{ alignSelf: "center" }}>Funding Strategies</span>
           </div>
         </div>
         {/* content area */}

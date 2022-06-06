@@ -615,11 +615,13 @@ export default {
     justifyItems: "center"
   },
   ".sidebar-item": {
-    paddingTop: "30px",
-    paddingRight: "30px",
     marginTop: "auto",
     flex: "1",
-    display: "flex"
+    display: "flex",
+    [xsBreak]: {
+      padding: "0px",
+      alignSelf: "right"
+    }
   },
   ".sidebar-green:hover": {
     background: "rgba(25, 183, 170, 0.5)"

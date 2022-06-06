@@ -5,7 +5,7 @@ import { jsx, css } from "@emotion/core";
 import { useStaticQuery, graphql } from "gatsby";
 import { Fragment } from "react";
 import { Logo } from "@hackoregon/ui-brand";
-import { colors } from "../../_Theme/UpdatedBrandTheme";
+import { colors, xsBreak } from "../../_Theme/UpdatedBrandTheme";
 import GridSingle from "../../components/GridSingle";
 import ProgramAreaBlock from "../../components/ProgramAreaBlock";
 
@@ -56,6 +56,9 @@ const ProgramAreas = () => {
         wideContent
         containerStyle={css`
           padding-top: 60px;
+          ${xsBreak} {
+            margin 0 20px;
+          }
         `}
       >
         <a id="programs" />
@@ -104,7 +107,6 @@ const ProgramAreas = () => {
           and conceptual art exhibitions.
         </p>
         <p>
-          {" "}
           Not sure where to start? Check out our guide on{" "}
           <a href="http://www.civicsoftwarefoundation.org">getting involved</a>.
         </p>
@@ -112,6 +114,9 @@ const ProgramAreas = () => {
       <GridSingle
         containerStyle={css`
           padding-bottom: 20px;
+          ${xsBreak} {
+            margin: 0 20px;
+          }
         `}
       >
         {contentfulContentList.content.map((content, i) => (

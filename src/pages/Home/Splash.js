@@ -7,7 +7,7 @@ import { useState } from "react";
 // import { Link, useStaticQuery, graphql } from "gatsby";
 import { Link } from "gatsby";
 import GridSingle from "../../components/GridSingle";
-import { colors } from "../../_Theme/UpdatedBrandTheme";
+import { colors, xsBreak } from "../../_Theme/UpdatedBrandTheme";
 
 const translations = {
   en: [
@@ -143,6 +143,9 @@ const Splash = () => {
         margin-top: 40px;
         padding-bottom: 60px;
         border-bottom: 6px solid ${colors.primary.hex};
+        ${xsBreak} {
+          display: none;
+        }
       `}
     >
       <div

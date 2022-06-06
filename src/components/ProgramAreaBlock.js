@@ -84,18 +84,21 @@ const ProgramAreaBlock = ({
         </div>
       </Modal>
       <div
-        style={{
-          display: "flex",
-          height: "auto",
-          minHeight: "420px",
-          margin: "20px 0",
-          padding: "20px",
-          background: "#EEE",
-          boxShadow: "6px 6px 0px #ccc",
-          position: "relative"
-        }}
+        css={css`
+          display: flex;
+          height: auto;
+          min-height: 420px;
+          margin: 20px 0;
+          padding: 20px;
+          background: #eee;
+          box-shadow: 6px 6px 0px #ccc;
+          position: relative;
+          ${xsBreak} {
+            flex-direction: column;
+            padding-bottom: 100px;
+          }
+        `}
       >
-        {" "}
         <div
           style={{
             display: "flex",
@@ -118,12 +121,15 @@ const ProgramAreaBlock = ({
           </div>
         </div>
         <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            marginLeft: "20px",
-            marginTop: "0px"
-          }}
+          css={css`
+            display: flex;
+            flex-direction: column;
+            margin-left: 20px;
+            margin-top: 0px;
+            ${xsBreak} {
+              margin-left: 0px;
+            }
+          `}
         >
           <h3 style={{ color: colors.primary.hex, marginTop: "0px" }}>
             {tagline}
