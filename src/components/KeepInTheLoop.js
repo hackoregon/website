@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable jsx-a11y/anchor-has-content */
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
 import { bool } from "prop-types";
@@ -8,6 +10,7 @@ import Mailchimp from "./Mailchimp";
 
 const KeepInTheLoop = ({ library }) => (
   <ContentContainer margin="sm">
+    <a id="apply" />
     <GridSingle
       containerStyle={css`
         padding: 0 20px;
