@@ -23,6 +23,10 @@ export default function HTML(props) {
           href="https://fonts.googleapis.com/css?family=Rubik"
           rel="stylesheet"
         />
+        <link
+          href="https://fonts.googleapis.com/css?family=Roboto"
+          rel="stylesheet"
+        />
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}

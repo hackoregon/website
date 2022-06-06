@@ -1,11 +1,83 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
+import { useState } from "react";
 // import { Link, useStaticQuery, graphql } from "gatsby";
 import { Link } from "gatsby";
 import GridSingle from "../../components/GridSingle";
 import { colors } from "../../_Theme/UpdatedBrandTheme";
 
+const translations = {
+  en: [
+    "All data are created",
+    "Put your principles into practice",
+    "Context-Aware Systems",
+    "Learn more about the metholology",
+    "Discover Modules",
+    "About our translations"
+  ],
+  sp: [
+    "Todos los datos son creados",
+    "Pon tus valores en práctica",
+    "Sistemas sensibles al contexto",
+    "Aprende más sobre la metodologia",
+    "Descrubre los módulos",
+    "Sobre nuestras traducciones"
+  ],
+  de: [
+    "Alle Daten werden konstruiert",
+    "Setze deine Werte in die Tat um",
+    "Kontextsensitive Systeme",
+    "Erfahre mehr über die Methoden",
+    "Entdecke unsere Module",
+    "Über unsere Übersetzungen"
+  ],
+  fr: [
+    "Toutes les données sont construites",
+    "Mettez vos valeurs en action",
+    "Des systèmes sensibles au contexte",
+    "En savoir plus sur la méthodologie",
+    "Découvrez nos modules",
+    "À propos de nos traductions"
+  ],
+  cat: [
+    "Totes les dades són creades",
+    "Posa els teus valors en pràctica",
+    "Sistemes sensibles al context",
+    "Aprèn més sobre la metodologia",
+    "Descobreix els mòduls",
+    "Sobre les nostres traduccions"
+  ],
+  tr: [
+    "Bütün veriler insanlar tarafından oluşturulmuştur",
+    "İlkelerinizi uygulamaya koyun",
+    "Bağlama Duyarlı Sistemler",
+    "Metodoloji hakkında daha fazla bilgi edinin",
+    "Modüllerimizi keşfedin",
+    "Çevirilerimiz hakkında"
+  ],
+  fi: [
+    "Kaikki data on rakennettua",
+    "Siirrä arvonne käytäntöön",
+    "Kontekstitietoinen järjestelmä",
+    "Lue lisää meidän menetelmistämme",
+    "Meidän palvelumme",
+    "Lisää käännöksistämme"
+  ],
+  nl: [
+    "Alle gegevens worden aangemaakt",
+    "Breng uw principes in de praktijk",
+    "Contextbewuste Systemen",
+    "Meer informatie over de methodologie",
+    "Ontdek de modules",
+    "Over onze vertalingen"
+  ]
+};
+
 const Splash = () => {
+  const [lang, setLang] = useState("en");
   // const { contentfulCallToActionBlock } = useStaticQuery(
   //   graphql`
   //     query {
@@ -41,6 +113,23 @@ const Splash = () => {
   // );
   // const backgroundImage = contentfulCallToActionBlock.image && makeImage(contentfulCallToActionBlock.image);
 
+  const getTranslationButtons = () => {
+    return Object.keys(translations).map((language, i) => {
+      return (
+        <div
+          type="button"
+          style={{ paddingLeft: "0.3em" }}
+          onClick={() => setLang(language)}
+        >
+          <a style={{ color: language === lang && "#DC4556" }}>
+            {language.toUpperCase()}{" "}
+          </a>
+          {i < Object.keys(translations).length - 1 && `|    `}
+        </div>
+      );
+    });
+  };
+
   return (
     <GridSingle
       wideContent
@@ -59,6 +148,7 @@ const Splash = () => {
       <div
         css={css`
           margin: 20px 20px 0 20px;
+          position: relative;
         `}
       >
         <h2
@@ -69,7 +159,7 @@ const Splash = () => {
             font-size: 3rem;
           `}
         >
-          All Data <br /> Are Created.
+          {translations[lang][0]}
         </h2>
         <h3
           css={css`
@@ -77,8 +167,20 @@ const Splash = () => {
             margin-top: 0;
           `}
         >
-          Put your principles into practice.
+          {translations[lang][1]}
         </h3>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            position: "absolute",
+            left: "150px",
+            bottom: "-40px"
+          }}
+        >
+          {translations[lang][5]}
+          <div style={{ display: "flex" }}>{getTranslationButtons()}</div>
+        </div>
       </div>
       <div
         css={css`
@@ -94,17 +196,17 @@ const Splash = () => {
             color: ${colors.pink.hex};
           `}
         >
-          Context-Aware Systems
+          {translations[lang][2]}
         </h2>
         <h3
           css={css`
             margin-top: 0;
           `}
         >
-          Learn more about the methodology
+          {translations[lang][3]}
         </h3>
         <Link to="/platform/" className="btn-pink">
-          <p>Discover Modules</p>
+          <p> {translations[lang][4]}</p>
         </Link>
       </div>
     </GridSingle>
