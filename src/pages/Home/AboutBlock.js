@@ -188,7 +188,7 @@ const AboutBlock = () => {
         containerStyle={css`
           color: ${colors.white};
           display: grid;
-          grid-template-columns: 200px auto;
+          grid-template-columns: 230px auto;
           height: 450px;
           border-bottom: 6px solid ${colors.green.hex};
 
