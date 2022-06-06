@@ -134,6 +134,7 @@ const Splash = () => {
     <GridSingle
       wideContent
       containerStyle={css`
+        max-width: 100%;
         display: flex;
         flex-direction: row;
         background-image: url("http://images.ctfassets.net/3j4jpxgb52st/22Zy80Y0niVHX4t3DWBDKw/80dd37a269627997a7b05dc446955b3c/splash_portrait.png?w=300&h=386&q=50");

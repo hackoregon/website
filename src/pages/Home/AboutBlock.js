@@ -40,7 +40,7 @@ const CategoryContent = ({ title, content, image, ctaOnClick, ctaText }) => {
         background: ${colors.primary.hex};
         padding: 0 40px;
         display: flex;
-        max-width: 900px;
+        max-width: 100%;
         max-height: 450px;
         overflow: hidden;
         ${xsBreak} {
@@ -67,10 +67,7 @@ const CategoryContent = ({ title, content, image, ctaOnClick, ctaText }) => {
             <Logo type="squareLogoInverted" />
             <h2 style={{ marginLeft: "20px" }}>{title}</h2>
           </div>
-          <div
-            className="aboutBlock"
-            style={{ paddingRight: "30px", maxWidth: "510px" }}
-          >
+          <div className="aboutBlock" style={{ paddingRight: "30px" }}>
             {documentToReactComponents(content)}
             <div type="button" onClick={ctaOnClick}>
               <a>{ctaText}</a>
@@ -186,6 +183,7 @@ const AboutBlock = () => {
       <GridSingle
         wideContent
         containerStyle={css`
+        max-width: 100%;
           color: ${colors.white};
           display: grid;
           grid-template-columns: 230px auto;
