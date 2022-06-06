@@ -143,6 +143,7 @@ const Splash = () => {
         background-position: left bottom;
         margin-top: 40px;
         padding-bottom: 60px;
+        justify-content: center;
         border-bottom: 6px solid ${colors.primary.hex};
         ${xsBreak} {
           display: none;
