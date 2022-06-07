@@ -162,11 +162,14 @@ const ProgramAreaBlock = ({
           </h3>
           {summary && (
             <div
-              style={{
-                fontSize: "14px",
-                background: "#fff",
-                padding: "0 10px"
-              }}
+              css={css`
+                background: #fff;
+                padding: 0 10px;
+                > ul {
+                  margin-left: 20px;
+                  list-style: disc !important;
+                }
+              `}
             >
               {documentToReactComponents(summary)}
             </div>
