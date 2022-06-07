@@ -8,6 +8,7 @@ import { jsx, css } from "@emotion/core";
 import { useState } from "react";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { Modal } from "@material-ui/core";
+import { Link } from "gatsby";
 import { colors, xsBreak } from "../_Theme/UpdatedBrandTheme";
 
 const imageStyle = css`
@@ -45,6 +46,10 @@ const ProgramAreaBlock = ({
   extraContentTagline,
   extraContentImage,
   extraContent,
+  extraContentButton1,
+  extraContentButton1ExternalLink,
+  extraContentButton2,
+  extraContentButton2ExternalLink,
   buttonColor
 }) => {
   const programImage = image && makeImage(image);
@@ -80,6 +85,18 @@ const ProgramAreaBlock = ({
           </div>
           <div style={{ marginTop: "30px", paddingRight: "30px" }}>
             {documentToReactComponents(extraContent && extraContent.json)}
+          </div>
+          <div style={{ marginTop: "20px", display: "flex", gap: "20px" }}>
+            {extraContentButton1 && (
+              <Link to={extraContentButton1ExternalLink} className="btn-green">
+                <p>{extraContentButton1}</p>
+              </Link>
+            )}
+            {extraContentButton2 && (
+              <Link to={extraContentButton2ExternalLink} className="btn-green">
+                <p>{extraContentButton2}</p>
+              </Link>
+            )}
           </div>
         </div>
       </Modal>

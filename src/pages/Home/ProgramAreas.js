@@ -36,6 +36,10 @@ const ProgramAreas = () => {
                   sizes
                 }
               }
+              extraContentButton1
+              extraContentButton1ExternalLink
+              extraContentButton2
+              extraContentButton2ExternalLink
               image {
                 description
                 fluid(maxWidth: 600) {
@@ -129,6 +133,14 @@ const ProgramAreas = () => {
             extraContentTagline={content.extraContentTagline}
             extraContent={content.extraContent}
             extraContentImage={content.extraContentImage}
+            extraContentButton1={content.extraContentButton1}
+            extraContentButton1ExternalLink={
+              content.extraContentButton1ExternalLink
+            }
+            extraContentButton2={content.extraContentButton2}
+            extraContentButton2ExternalLink={
+              content.extraContentButton2ExternalLink
+            }
             buttonColor={colorOrder[i]}
           />
         ))}
