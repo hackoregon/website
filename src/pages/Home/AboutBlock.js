@@ -50,11 +50,14 @@ const CategoryContent = ({ title, content, image, ctaOnClick, ctaText }) => {
       `}
     >
       <div
-        style={{
-          position: "relative",
-          width: "100%",
-          display: "flex"
-        }}
+        css={css`
+          position: relative;
+          width: 100%;
+          display: flex;
+          ${xsBreak} {
+            flex-direction: column;
+          }
+        `}
       >
         <div>
           <div
@@ -67,7 +70,15 @@ const CategoryContent = ({ title, content, image, ctaOnClick, ctaText }) => {
             <Logo type="squareLogoInverted" />
             <h2 style={{ marginLeft: "20px" }}>{title}</h2>
           </div>
-          <div className="aboutBlock" style={{ paddingRight: "30px" }}>
+          <div
+            className="aboutBlock"
+            css={css`
+              padding-right: 30px;
+              ${xsBreak} {
+                padding-right: 0px;
+              }
+            `}
+          >
             {documentToReactComponents(content)}
             <div type="button" onClick={ctaOnClick}>
               <a>{ctaText}</a>
@@ -79,7 +90,8 @@ const CategoryContent = ({ title, content, image, ctaOnClick, ctaText }) => {
             display: flex;
             align-items: center;
             ${xsBreak} {
-              display: none;
+              margin-top: 20px;
+              justify-content: center;
             }
           `}
         >

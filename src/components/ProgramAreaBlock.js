@@ -4,7 +4,6 @@
 /* eslint-disable react/prop-types */
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
-// import { Link } from "gatsby";
 import { useState } from "react";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { Modal } from "@material-ui/core";
@@ -21,12 +20,6 @@ const imageStyle = css`
     max-width: 400px;
   }
 `;
-
-// const contentStyle = css`
-//   grid-area: content;
-//   display: grid;
-//   align-content: center;
-// `;
 
 const makeImage = image => (
   <img
@@ -86,7 +79,16 @@ const ProgramAreaBlock = ({
           <div style={{ marginTop: "30px", paddingRight: "30px" }}>
             {documentToReactComponents(extraContent && extraContent.json)}
           </div>
-          <div style={{ marginTop: "20px", display: "flex", gap: "20px" }}>
+          <div
+            css={css`
+              margin-top: 20px;
+              display: flex;
+              gap: 20px;
+              ${xsBreak} {
+                flex-direction: column;
+              }
+            `}
+          >
             {extraContentButton1 && (
               <Link to={extraContentButton1ExternalLink} className="btn-green">
                 <p>{extraContentButton1}</p>
@@ -148,7 +150,14 @@ const ProgramAreaBlock = ({
             }
           `}
         >
-          <h3 style={{ color: colors.primary.hex, marginTop: "0px" }}>
+          <h3
+            style={{
+              color: colors.primary.hex,
+              marginTop: "0px",
+              fontSize: "32px",
+              fontWeight: "800"
+            }}
+          >
             {tagline}
           </h3>
           {summary && (
@@ -162,17 +171,6 @@ const ProgramAreaBlock = ({
               {documentToReactComponents(summary)}
             </div>
           )}
-          {/* {button && buttonLocalLink && (
-            <Link
-              to={`${buttonLocalLink}`}
-              className="btn-pink"
-              style={{
-                marginTop: "2rem"
-              }}
-            >
-              <p>{button}</p>
-            </Link>
-          )} */}
         </div>
       </div>
     </div>

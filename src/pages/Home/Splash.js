@@ -4,8 +4,9 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
 import { useState } from "react";
-// import { Link, useStaticQuery, graphql } from "gatsby";
-import { Link } from "gatsby";
+import { Link, useStaticQuery, graphql } from "gatsby";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { Modal } from "@material-ui/core";
 import GridSingle from "../../components/GridSingle";
 import { colors, xsBreak } from "../../_Theme/UpdatedBrandTheme";
 
@@ -76,42 +77,57 @@ const translations = {
   ]
 };
 
+const imageStyle = css`
+  grid-area: image;
+  width: 350px;
+  max-width: 40vw;
+
+  ${xsBreak} {
+    width: 100%;
+    max-width: 400px;
+  }
+`;
+
+const makeImage = image => (
+  <img
+    srcSet={image.fluid.srcSet}
+    sizes={image.fluid.sizes}
+    alt={image.description}
+    css={imageStyle}
+  />
+);
+
 const Splash = () => {
   const [lang, setLang] = useState("en");
-  // const { contentfulCallToActionBlock } = useStaticQuery(
-  //   graphql`
-  //     query {
-  //       contentfulCallToActionBlock(
-  //         contentful_id: { eq: "7AKSw2suSBvGVjfgeWze5N" }
-  //       ) {
-  //         tagline
-  //         image {
-  //           description
-  //           fluid(maxWidth: 600) {
-  //             srcSet
-  //             sizes
-  //           }
-  //         }
-  //       }
-  //     }
-  //   `
-  // );
 
-  //   const imageStyle = css`
-  // marginLeft: "20px",
-  // marginTop: "-40px",
-  // maxWidth: "200px"
-  // `;
+  const [showDetailPopover, setShowDetailPopover] = useState(false);
 
-  // const makeImage = image => (
-  //   <img
-  //     srcSet={image.fluid.srcSet}
-  //     sizes={image.fluid.sizes}
-  //     alt={image.description}
-  //     css={imageStyle}
-  //   />
-  // );
-  // const backgroundImage = contentfulCallToActionBlock.image && makeImage(contentfulCallToActionBlock.image);
+  const toggleDetailPopover = () => {
+    setShowDetailPopover(!showDetailPopover);
+  };
+
+  const { contentfulCallToActionBlock } = useStaticQuery(
+    graphql`
+      query {
+        contentfulCallToActionBlock(
+          contentful_id: { eq: "6EY0rIjUPU5680BJ9c622k" }
+        ) {
+          tagline
+          summary {
+            json
+          }
+          extraContentTagline
+          extraContent {
+            json
+          }
+          extraContentButton1
+          extraContentButton1ExternalLink
+          extraContentButton2
+          extraContentButton2ExternalLink
+        }
+      }
+    `
+  );
 
   const getTranslationButtons = () => {
     return Object.keys(translations).map((language, i) => {
@@ -141,7 +157,7 @@ const Splash = () => {
         background-repeat: no-repeat;
         background-size: 150px auto;
         background-position: left bottom;
-        margin-top: 40px;
+        margin-top: 100px;
         padding-bottom: 60px;
         justify-content: center;
         border-bottom: 6px solid ${colors.primary.hex};
@@ -150,6 +166,66 @@ const Splash = () => {
         }
       `}
     >
+      <Modal id="modal" open={showDetailPopover} onClose={toggleDetailPopover}>
+        <div
+          css={css`
+            color: ${colors.primary.hex};
+            background: ${colors.white};
+            outline: 0;
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -30%);
+            width: 70vw;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            max-height: 70vh;
+            overflow-y: scroll;
+          `}
+        >
+          <h2 style={{ marginLeft: "20px" }}>
+            {contentfulCallToActionBlock.extraContentTagline}
+          </h2>
+          <div style={{ textAlign: "center" }}>
+            {contentfulCallToActionBlock.extraContentImage &&
+              makeImage(contentfulCallToActionBlock.extraContentImage)}
+          </div>
+          <div style={{ marginTop: "30px", paddingRight: "30px" }}>
+            {documentToReactComponents(
+              contentfulCallToActionBlock.extraContent &&
+                contentfulCallToActionBlock.extraContent.json
+            )}
+          </div>
+          <div
+            css={css`
+              margin-top: 20px;
+              display: flex;
+              gap: 20px;
+              ${xsBreak} {
+                flex-direction: column;
+              }
+            `}
+          >
+            {contentfulCallToActionBlock.extraContentButton1 && (
+              <Link
+                to={contentfulCallToActionBlock.extraContentButton1ExternalLink}
+                className="btn-green"
+              >
+                <p>{contentfulCallToActionBlock.extraContentButton1}</p>
+              </Link>
+            )}
+            {contentfulCallToActionBlock.extraContentButton2 && (
+              <Link
+                to={contentfulCallToActionBlock.extraContentButton2ExternalLink}
+                className="btn-green"
+              >
+                <p>{contentfulCallToActionBlock.extraContentButton2}</p>
+              </Link>
+            )}
+          </div>
+        </div>
+      </Modal>
       <div
         css={css`
           margin: 20px 20px 0 20px;
@@ -170,6 +246,7 @@ const Splash = () => {
           css={css`
             margin-left: 140px;
             margin-top: 0;
+            color: #000;
           `}
         >
           {translations[lang][1]}
@@ -206,13 +283,22 @@ const Splash = () => {
         <h3
           css={css`
             margin-top: 0;
+            color: #000;
           `}
         >
           {translations[lang][3]}
         </h3>
-        <Link to="/platform/" className="btn-pink">
+
+        <div
+          type="button"
+          className="btn-pink"
+          style={{
+            marginTop: "2rem"
+          }}
+          onClick={toggleDetailPopover}
+        >
           <p> {translations[lang][4]}</p>
-        </Link>
+        </div>
       </div>
     </GridSingle>
   );
