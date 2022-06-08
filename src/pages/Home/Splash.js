@@ -270,6 +270,7 @@ const Splash = () => {
     </div>
   );
 
+  // TODO: convert image to use contentful
   return (
     <GridSingle
       wideContent
