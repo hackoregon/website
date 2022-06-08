@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
@@ -7,6 +9,7 @@ import { useState } from "react";
 import { Link, useStaticQuery, graphql } from "gatsby";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { Modal } from "@material-ui/core";
+import Carousel from "react-material-ui-carousel";
 import GridSingle from "../../components/GridSingle";
 import { colors, xsBreak } from "../../_Theme/UpdatedBrandTheme";
 
@@ -17,7 +20,7 @@ const translations = {
     "Context-Aware Systems",
     "Learn more about the metholology",
     "Discover Modules",
-    "About our translations"
+    "About these translations"
   ],
   sp: [
     "Todos los datos son creados",
@@ -99,11 +102,15 @@ const makeImage = image => (
 
 const Splash = () => {
   const [lang, setLang] = useState("en");
+  const [showDetailModal, setShowDetailModal] = useState(false);
+  const [showLanguageModal, setShowLanguageModal] = useState(false);
 
-  const [showDetailPopover, setShowDetailPopover] = useState(false);
+  const toggleDetailModal = () => {
+    setShowDetailModal(!showDetailModal);
+  };
 
-  const toggleDetailPopover = () => {
-    setShowDetailPopover(!showDetailPopover);
+  const toggleLanguageModal = () => {
+    setShowLanguageModal(!showLanguageModal);
   };
 
   const { contentfulCallToActionBlock } = useStaticQuery(
@@ -134,7 +141,13 @@ const Splash = () => {
       return (
         <div
           type="button"
-          style={{ paddingLeft: "0.3em" }}
+          css={css`
+            padding-left: 0.3em;
+            ${xsBreak} {
+              padding-left: 0.2em;
+              font-size: 14px;
+            }
+          `}
           onClick={() => setLang(language)}
         >
           <a style={{ color: language === lang && "#DC4556" }}>
@@ -145,6 +158,117 @@ const Splash = () => {
       );
     });
   };
+
+  const Item = ({ item }) => (
+    <div
+      css={css`
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: 300px;
+        width: 100%;
+        ${xsBreak} {
+          display: flex;
+          flex-direction: column;
+          height: 570px;
+        }
+      `}
+    >
+      <div
+        css={css`
+          margin-left: 140px;
+          ${xsBreak} {
+            margin-left: 0px;
+          }
+        `}
+      >
+        <h2
+          css={css`
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-size: 3rem;
+          `}
+        >
+          {item[0]}
+        </h2>
+        <h3
+          css={css`
+            margin-top: 0;
+            color: #000;
+          `}
+        >
+          {item[1]}
+        </h3>
+        <div
+          css={css`
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            left: 150px;
+            bottom: -40px;
+            ${xsBreak} {
+              bottom: 0px;
+              left: 135px;
+            }
+          `}
+        >
+          <div id="aboutTranslations" onClick={toggleLanguageModal}>
+            <a>{item[5]}</a>
+          </div>
+          <div
+            css={css`
+              display: flex;
+              ${xsBreak} {
+              }
+            `}
+          >
+            {getTranslationButtons()}
+          </div>
+        </div>
+      </div>
+
+      <div
+        css={css`
+          padding-left: 40px;
+          border-left: 2px solid ${colors.primary.hex};
+          ${xsBreak} {
+            border-left: none;
+            padding-left: 0px;
+          }
+        `}
+      >
+        <h2
+          css={css`
+            margin-top: 5px;
+            margin-bottom: 1rem;
+            color: ${colors.pink.hex};
+          `}
+        >
+          {item[2]}
+        </h2>
+        <h3
+          css={css`
+            margin-top: 0;
+            color: #000;
+          `}
+        >
+          {item[3]}
+        </h3>
+
+        <div
+          type="button"
+          className="btn-pink"
+          style={{
+            marginTop: "2rem",
+            width: "fit-content",
+            padding: "0 20px"
+          }}
+          onClick={toggleDetailModal}
+        >
+          <p> {item[4]}</p>
+        </div>
+      </div>
+    </div>
+  );
 
   return (
     <GridSingle
@@ -157,16 +281,42 @@ const Splash = () => {
         background-repeat: no-repeat;
         background-size: 150px auto;
         background-position: left bottom;
-        margin-top: 100px;
-        padding-bottom: 60px;
+        margin-top: 60px;
+        padding-bottom: 40px;
         justify-content: center;
         border-bottom: 6px solid ${colors.primary.hex};
         ${xsBreak} {
-          display: none;
+          border-left: none;
+          padding-left: none;
+          margin-top: 0px;
         }
       `}
     >
-      <Modal id="modal" open={showDetailPopover} onClose={toggleDetailPopover}>
+      <Modal open={showLanguageModal} onClose={toggleLanguageModal}>
+        <div
+          css={css`
+            color: ${colors.primary.hex};
+            background: ${colors.white};
+            outline: 0;
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -30%);
+            width: 70vw;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            max-height: 70vh;
+            overflow-y: scroll;
+          `}
+        >
+          {documentToReactComponents(
+            contentfulCallToActionBlock.summary &&
+              contentfulCallToActionBlock.summary.json
+          )}
+        </div>
+      </Modal>
+      <Modal id="modal" open={showDetailModal} onClose={toggleDetailModal}>
         <div
           css={css`
             color: ${colors.primary.hex};
@@ -230,75 +380,18 @@ const Splash = () => {
         css={css`
           margin: 20px 20px 0 20px;
           position: relative;
+          width: 100%;
         `}
       >
-        <h2
-          css={css`
-            margin-top: 0;
-            margin-bottom: 1rem;
-            margin-left: 140px;
-            font-size: 3rem;
-          `}
+        <Carousel
+          next={next => setLang(Object.keys(translations)[next])}
+          prev={prev => setLang(Object.keys(translations)[prev])}
+          index={Object.keys(translations).findIndex(key => key === lang)}
         >
-          {translations[lang][0]}
-        </h2>
-        <h3
-          css={css`
-            margin-left: 140px;
-            margin-top: 0;
-            color: #000;
-          `}
-        >
-          {translations[lang][1]}
-        </h3>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            position: "absolute",
-            left: "150px",
-            bottom: "-40px"
-          }}
-        >
-          {translations[lang][5]}
-          <div style={{ display: "flex" }}>{getTranslationButtons()}</div>
-        </div>
-      </div>
-      <div
-        css={css`
-          margin: 20px 20px 0 0;
-          padding-left: 40px;
-          border-left: 2px solid ${colors.primary.hex};
-        `}
-      >
-        <h2
-          css={css`
-            margin-top: 0;
-            margin-bottom: 1rem;
-            color: ${colors.pink.hex};
-          `}
-        >
-          {translations[lang][2]}
-        </h2>
-        <h3
-          css={css`
-            margin-top: 0;
-            color: #000;
-          `}
-        >
-          {translations[lang][3]}
-        </h3>
-
-        <div
-          type="button"
-          className="btn-pink"
-          style={{
-            marginTop: "2rem"
-          }}
-          onClick={toggleDetailPopover}
-        >
-          <p> {translations[lang][4]}</p>
-        </div>
+          {Object.keys(translations).map(language => (
+            <Item key={translations[language]} item={translations[language]} />
+          ))}
+        </Carousel>
       </div>
     </GridSingle>
   );

@@ -206,7 +206,7 @@ const AboutBlock = () => {
             display: flex;
             flex-direction: column;
             height: auto;
-            margin-top: 10px;
+            margin-top: 0px;
         `}
       >
         {/* sidebar buttons */}
