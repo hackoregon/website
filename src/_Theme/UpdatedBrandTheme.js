@@ -10,6 +10,7 @@ export const smBreak = "@media (max-width:959.95px)";
 export const mdBreak = "@media (min-width:959.95px)";
 export const lgCardBreak = "@media (max-width:1230px)";
 export const lgBreak = "@media (max-width:1260px)";
+export const minXlBreak = "@media screen and (min-width: 1200px)";
 
 // Colors
 export const colors = {
@@ -384,6 +385,9 @@ export default {
   b,
   blockquote,
   i,
+  "*": {
+    boxSizing: "border-box"
+  },
 
   // Class names
   ".p-sm": pSmall,
@@ -403,6 +407,13 @@ export default {
 
   ".code": code,
   ".a": a,
+
+  ".mobile-nav-menu": {
+    background: "white",
+    "div:first-of-type": {
+      "background-color": "white !important"
+    }
+  },
 
   ".btn": button,
   ".btn-pink": {
@@ -606,22 +617,59 @@ export default {
     }
   },
 
+  ".aboutSection": {
+    "> p": {
+      color: "black"
+    }
+  },
+
   ".about-sidebar": {
     color: `${colors.primary.hex}`,
-    fontSize: "20px",
+    fontSize: "22px",
     fontWeight: "bold",
     display: "flex",
     flexDirection: "column",
-    justifyItems: "center"
+    justifyItems: "center",
+    [xsBreak]: {
+      flexDirection: "row",
+      fontSize: "14px",
+      lineHeight: "18px",
+      fontWeight: 500
+    }
   },
   ".sidebar-item": {
     marginTop: "auto",
     flex: "1",
     display: "flex",
+    background: "black",
+    color: "white",
+    svg: {
+      fontSize: 25,
+      alignSelf: "center",
+      margin: "0 14px 0 6px"
+    },
     [xsBreak]: {
-      padding: "0px",
-      alignSelf: "right"
+      padding: "10px 0px",
+      alignSelf: "right",
+      flex: "1 auto",
+      svg: {
+        fontSize: 16,
+        margin: "0",
+        transform: "rotate(0deg)",
+        "&.arrow-down": {
+          transform: "rotate(90deg)"
+        }
+      }
     }
+  },
+  ".sidebar-item:hover": {
+    background: "white",
+    color: "black",
+    cursor: "pointer"
+  },
+  ".sidebar-item-selected": {
+    background: "white",
+    color: "black"
   },
   ".sidebar-green:hover": {
     background: "rgba(25, 183, 170, 0.5)"

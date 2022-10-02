@@ -13,6 +13,7 @@ module.exports = {
     "jsx-a11y/label-has-for": 0,
     "prefer-arrow-callback": 0,
     "no-underscore-dangle": 0,
+    "react/no-unescaped-entities": 0,
     "func-names": 2,
     "react/jsx-filename-extension": 0,
     "react/jsx-uses-react": 2,

@@ -1,11 +1,12 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 import PageLayout from "../components/PageLayout";
-import Splash from "./Home/Splash";
-import AboutBlock from "./Home/AboutBlock";
-import ProgramAreas from "./Home/ProgramAreas";
+import AboutSection from "./Home/AboutSection";
 import { colors } from "../_Theme/UpdatedBrandTheme";
-import KeepInTheLoop from "../components/KeepInTheLoop";
+import JoinTheCommunity from "../components/JoinTheCommunity";
+import Landing from "./Home/Landing";
+import ProgramSection from "./Home/ProgramSection";
+import ProgramBreakdown from "./Home/ProgramBreakdown";
 
 const IndexPage = () => {
   return (
@@ -14,11 +15,13 @@ const IndexPage = () => {
       keywords={[`Civic Software Foundation`, `CIVIC Platform`]}
       swoopColor={colors.yellow.hex}
       hideCommonCTA
+      isRebrand
     >
-      <Splash />
-      <AboutBlock />
-      <ProgramAreas />
-      <KeepInTheLoop />
+      <Landing />
+      <ProgramSection />
+      <ProgramBreakdown />
+      <AboutSection />
+      <JoinTheCommunity />
     </PageLayout>
   );
 };
