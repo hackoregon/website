@@ -429,7 +429,7 @@ const Landing = () => {
           next={next => setLang(Object.keys(translations)[next])}
           prev={prev => setLang(Object.keys(translations)[prev])}
           index={Object.keys(translations).findIndex(key => key === lang)}
-          interval={20000}
+          interval={15000}
           indicators={false}
         >
           {Object.keys(translations).map(language => (
