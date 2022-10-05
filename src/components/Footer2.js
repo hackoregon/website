@@ -23,6 +23,30 @@ const Footer2 = () => (
           border-top: 2px solid white;
         `}
       >
+        <div
+          css={css`
+            max-width: 800px;
+            margin: 0 auto;
+          `}
+        >
+          <p className="p-sm" css={footerText}>
+            <i>
+              Unless otherwise noted, content and materials on this site are
+              owned by Civic Software Foundation licensed under a{" "}
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+                International License
+              </a>
+              .
+            </i>
+            <br />
+            Artwork and illustrations featured on homepage are by{" "}
+            <a href="https://www.linkedin.com/in/falaah-arif-khan-b99058154">
+              Falaah Arif Khan
+            </a>
+            .
+          </p>
+        </div>
         <p className="p-sm" css={footerText}>
           Civic Software Foundation is a 501(c)(3) registered non-profit
           organization. EIN 46-5498921

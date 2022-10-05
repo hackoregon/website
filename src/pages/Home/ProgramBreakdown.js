@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
-// import { Logo } from "@hackoregon/ui-brand";
 import CollabImg from "../../images/Collaboration_Studio.png";
 import ContextualMetaImg from "../../images/Contextual_Metadata.png";
 import CivTechGlobalImg from "../../images/CivTech_Global.png";
@@ -9,6 +8,21 @@ import IntersectionalFuturesNetworkImg from "../../images/Intersectional_Futures
 import DataMaterialismImg from "../../images/Data_Materialism.png";
 import { smBreak } from "../../_Theme/UpdatedBrandTheme";
 
+const anchorCss = css`
+  padding: 7px 20px;
+  background-color: black;
+  color: white;
+  border: 5px solid black;
+  font-size: 23px;
+  font-weight: 500;
+  border-radius: 3px;
+  &:hover,
+  &:focus {
+    background-color: white;
+    color: black;
+    background-size: 0% 0%;
+  }
+`;
 const ProgramBreakdown = () => {
   return (
     <div
@@ -83,19 +97,7 @@ const ProgramBreakdown = () => {
             `}
           >
             <a
-              css={css`
-                padding: 7px 20px;
-                background-color: white;
-                border: 5px solid black;
-                font-size: 23px;
-                font-weight: 500;
-                border-radius: 3px;
-                color: black;
-                &:hover {
-                  background: black;
-                  color: white;
-                }
-              `}
+              css={anchorCss}
               href="https://www.notion.so/civicsoftware/CIVIC-Collaboration-Studio-99964cbd21794140b50d2ea7f7c32d36"
               target="_blank"
               rel="noreferrer"
@@ -182,19 +184,7 @@ const ProgramBreakdown = () => {
             `}
           >
             <a
-              css={css`
-                padding: 7px 20px;
-                background-color: white;
-                border: 5px solid black;
-                font-size: 23px;
-                font-weight: 500;
-                border-radius: 3px;
-                color: black;
-                &:hover {
-                  background: black;
-                  color: white;
-                }
-              `}
+              css={anchorCss}
               href="https://www.notion.so/civicsoftware/Contextual-Metadata-Lab-e449d04a2f2a4eefa97dd9a74e246853"
               target="_blank"
               rel="noreferrer"
@@ -279,19 +269,7 @@ const ProgramBreakdown = () => {
             `}
           >
             <a
-              css={css`
-                padding: 7px 20px;
-                background-color: white;
-                border: 5px solid black;
-                font-size: 23px;
-                font-weight: 500;
-                border-radius: 3px;
-                color: black;
-                &:hover {
-                  background: black;
-                  color: white;
-                }
-              `}
+              css={anchorCss}
               href="https://www.notion.so/civicsoftware/CivTech-Global-Aliance-e66b2d17a9704fa68fdf71a26bb9a8ea"
               target="_blank"
               rel="noreferrer"
@@ -379,19 +357,7 @@ const ProgramBreakdown = () => {
             `}
           >
             <a
-              css={css`
-                padding: 7px 20px;
-                background-color: white;
-                border: 5px solid black;
-                font-size: 23px;
-                font-weight: 500;
-                border-radius: 3px;
-                color: black;
-                &:hover {
-                  background: black;
-                  color: white;
-                }
-              `}
+              css={anchorCss}
               href="https://www.notion.so/civicsoftware/Democracy-Reform-Tech-f6992a820ac341d1b2f0f88cb2c2af67"
               target="_blank"
               rel="noreferrer"
@@ -478,19 +444,7 @@ const ProgramBreakdown = () => {
             `}
           >
             <a
-              css={css`
-                padding: 7px 20px;
-                background-color: white;
-                border: 5px solid black;
-                font-size: 23px;
-                font-weight: 500;
-                border-radius: 3px;
-                color: black;
-                &:hover {
-                  background: black;
-                  color: white;
-                }
-              `}
+              css={anchorCss}
               href="https://www.notion.so/civicsoftware/Intersectional-Futures-Network-895874eebf5949f5a556847f2f7c8b8e"
               target="_blank"
               rel="noreferrer"
@@ -575,19 +529,7 @@ const ProgramBreakdown = () => {
             `}
           >
             <a
-              css={css`
-                padding: 7px 20px;
-                background-color: white;
-                border: 5px solid black;
-                font-size: 23px;
-                font-weight: 500;
-                border-radius: 3px;
-                color: black;
-                &:hover {
-                  background: black;
-                  color: white;
-                }
-              `}
+              css={anchorCss}
               href="https://www.notion.so/civicsoftware/Data-Materialism-Department-999670e9880547098465544abcd83de4"
               target="_blank"
               rel="noreferrer"
