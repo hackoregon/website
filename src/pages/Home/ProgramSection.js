@@ -112,7 +112,10 @@ const ProgramSection = () => {
         </div>
         <p>
           Curious? Learn more and check out our guide on{" "}
-          <a href="http://www.civicsoftwarefoundation.org">getting involved</a>.
+          <a href="https://www.notion.so/civicsoftware/Get-Involved-38630f3834e749d2bfbd0adba54cf5db">
+            getting involved
+          </a>
+          .
         </p>
       </div>
     </div>

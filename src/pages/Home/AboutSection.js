@@ -92,7 +92,7 @@ const CategoryContent = ({ title, content, image, ctaOnClick, ctaText }) => {
         <div
           css={css`
             min-width: 590px;
-            overflow-y: scroll;
+            overflow-y: auto;
             ${mdBreak} {
               min-width: 300px;
             }
@@ -169,7 +169,7 @@ const CategoryContent = ({ title, content, image, ctaOnClick, ctaText }) => {
               img:not(#civic-logo) {
                 width: 100%;
                 height: auto !important;
-                max-width: 90vw;
+                max-width: 70vw;
               }
             }
           `}

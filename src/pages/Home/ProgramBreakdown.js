@@ -52,7 +52,7 @@ const ProgramBreakdown = () => {
         >
           <h2
             css={css`
-              font-weight: 500;
+              font-weight: 600;
               font-size: 52px;
               margin-bottom: 24px;
               ${smBreak} {
@@ -151,7 +151,7 @@ const ProgramBreakdown = () => {
         >
           <h2
             css={css`
-              font-weight: 500;
+              font-weight: 600;
               font-size: 52px;
               margin-bottom: 24px;
               ${smBreak} {
@@ -250,7 +250,7 @@ const ProgramBreakdown = () => {
         >
           <h2
             css={css`
-              font-weight: 500;
+              font-weight: 600;
               font-size: 52px;
               margin-bottom: 24px;
               ${smBreak} {
@@ -347,7 +347,7 @@ const ProgramBreakdown = () => {
         >
           <h2
             css={css`
-              font-weight: 500;
+              font-weight: 600;
               font-size: 52px;
               margin-bottom: 24px;
               ${smBreak} {
@@ -447,7 +447,7 @@ const ProgramBreakdown = () => {
         >
           <h2
             css={css`
-              font-weight: 500;
+              font-weight: 600;
               font-size: 52px;
               margin-bottom: 24px;
               ${smBreak} {
@@ -546,7 +546,7 @@ const ProgramBreakdown = () => {
         >
           <h2
             css={css`
-              font-weight: 500;
+              font-weight: 600;
               font-size: 52px;
               margin-bottom: 24px;
               ${smBreak} {
@@ -554,7 +554,7 @@ const ProgramBreakdown = () => {
               }
             `}
           >
-            Data materialism
+            Data materialism Department
           </h2>
           <p>Where does data really come from?</p>
           <p>

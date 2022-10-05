@@ -23,34 +23,160 @@ const translations = {
       "Put your principles into practice and discover content-aware systems",
     btn1: {
       title: "Modules",
-      link: "https://google.com" // TODO: update these links
+      link:
+        "https://www.notion.so/civicsoftware/Discover-Modules-2abcaab27879405e9eab0e3320a6eaf8"
     },
     btn2: {
       title: "Workshops",
-      link: "https://google.com"
+      link:
+        "https://www.notion.so/civicsoftware/Workshops-fafe0d736bee4becba44b4292508b14c"
     },
     btn3: {
       title: "Applied Work",
-      link: "https://google.com"
+      link:
+        "https://www.notion.so/civicsoftware/CIVIC-Collaboration-Studio-99964cbd21794140b50d2ea7f7c32d36"
+    }
+  },
+  sp: {
+    title: "Todos los datos son creados",
+    description:
+      "Pon tus valores en práctica y descubre sistemas sensibles al contexto",
+    btn1: {
+      title: "Modules",
+      link:
+        "https://www.notion.so/civicsoftware/Discover-Modules-2abcaab27879405e9eab0e3320a6eaf8"
+    },
+    btn2: {
+      title: "Workshops",
+      link:
+        "https://www.notion.so/civicsoftware/Workshops-fafe0d736bee4becba44b4292508b14c"
+    },
+    btn3: {
+      title: "Applied Work",
+      link:
+        "https://www.notion.so/civicsoftware/CIVIC-Collaboration-Studio-99964cbd21794140b50d2ea7f7c32d36"
+    }
+  },
+  de: {
+    title: "Alle Daten werden konstruiert",
+    description:
+      "Setze deine Werte in die Tat um und entdecke kontextsensitive systeme",
+    btn1: {
+      title: "Modules",
+      link:
+        "https://www.notion.so/civicsoftware/Discover-Modules-2abcaab27879405e9eab0e3320a6eaf8"
+    },
+    btn2: {
+      title: "Workshops",
+      link:
+        "https://www.notion.so/civicsoftware/Workshops-fafe0d736bee4becba44b4292508b14c"
+    },
+    btn3: {
+      title: "Applied Work",
+      link:
+        "https://www.notion.so/civicsoftware/CIVIC-Collaboration-Studio-99964cbd21794140b50d2ea7f7c32d36"
+    }
+  },
+  fr: {
+    title: "Toutes les données sont construites",
+    description:
+      "Mettez vos valeurs en action et découvrez des systèmes sensibles au contexte",
+    btn1: {
+      title: "Modules",
+      link:
+        "https://www.notion.so/civicsoftware/Discover-Modules-2abcaab27879405e9eab0e3320a6eaf8"
+    },
+    btn2: {
+      title: "Workshops",
+      link:
+        "https://www.notion.so/civicsoftware/Workshops-fafe0d736bee4becba44b4292508b14c"
+    },
+    btn3: {
+      title: "Applied Work",
+      link:
+        "https://www.notion.so/civicsoftware/CIVIC-Collaboration-Studio-99964cbd21794140b50d2ea7f7c32d36"
+    }
+  },
+  nl: {
+    title: "Alle gegevens worden aangemaakt",
+    description:
+      "Breng uw principes in de praktijk en ontdek contextbewuste systemen",
+    btn1: {
+      title: "Modules",
+      link:
+        "https://www.notion.so/civicsoftware/Discover-Modules-2abcaab27879405e9eab0e3320a6eaf8"
+    },
+    btn2: {
+      title: "Workshops",
+      link:
+        "https://www.notion.so/civicsoftware/Workshops-fafe0d736bee4becba44b4292508b14c"
+    },
+    btn3: {
+      title: "Applied Work",
+      link:
+        "https://www.notion.so/civicsoftware/CIVIC-Collaboration-Studio-99964cbd21794140b50d2ea7f7c32d36"
+    }
+  },
+  cat: {
+    title: "Totes les dades són creades",
+    description:
+      "Posa els teus valors en pràctica i descobreix sistemes sensibles al context",
+    btn1: {
+      title: "Modules",
+      link:
+        "https://www.notion.so/civicsoftware/Discover-Modules-2abcaab27879405e9eab0e3320a6eaf8"
+    },
+    btn2: {
+      title: "Workshops",
+      link:
+        "https://www.notion.so/civicsoftware/Workshops-fafe0d736bee4becba44b4292508b14c"
+    },
+    btn3: {
+      title: "Applied Work",
+      link:
+        "https://www.notion.so/civicsoftware/CIVIC-Collaboration-Studio-99964cbd21794140b50d2ea7f7c32d36"
+    }
+  },
+  fi: {
+    title: "Kaikki data on rakennettua",
+    description:
+      "Siirrä arvonne käytäntöön ja ota meidän kontekstitietoisesta järjestelmästä",
+    btn1: {
+      title: "Modules",
+      link:
+        "https://www.notion.so/civicsoftware/Discover-Modules-2abcaab27879405e9eab0e3320a6eaf8"
+    },
+    btn2: {
+      title: "Workshops",
+      link:
+        "https://www.notion.so/civicsoftware/Workshops-fafe0d736bee4becba44b4292508b14c"
+    },
+    btn3: {
+      title: "Applied Work",
+      link:
+        "https://www.notion.so/civicsoftware/CIVIC-Collaboration-Studio-99964cbd21794140b50d2ea7f7c32d36"
+    }
+  },
+  tr: {
+    title: "Bütün veriler insanlar tarafından oluşturulmuştur",
+    description:
+      "İlkelerinizi uygulamaya koyun ve bağlama duyarlı sistemleri keşfedin",
+    btn1: {
+      title: "Modules",
+      link:
+        "https://www.notion.so/civicsoftware/Discover-Modules-2abcaab27879405e9eab0e3320a6eaf8"
+    },
+    btn2: {
+      title: "Workshops",
+      link:
+        "https://www.notion.so/civicsoftware/Workshops-fafe0d736bee4becba44b4292508b14c"
+    },
+    btn3: {
+      title: "Applied Work",
+      link:
+        "https://www.notion.so/civicsoftware/CIVIC-Collaboration-Studio-99964cbd21794140b50d2ea7f7c32d36"
     }
   }
-  // es: {
-  //   title: "All Data Are Created.",
-  //   description:
-  //     "Put your principles into practice and discover content-aware systems",
-  //   btn1: {
-  //     title: "Modules",
-  //     link: "https://google.com"
-  //   },
-  //   btn2: {
-  //     title: "Workshops",
-  //     link: "https://google.com"
-  //   },
-  //   btn3: {
-  //     title: "Applied Work",
-  //     link: "https://google.com"
-  //   }
-  // }
 };
 
 const Landing = () => {
@@ -175,7 +301,7 @@ const Landing = () => {
             }
           `}
         >
-          <AnchorLink to={item.btn1.link}>
+          <AnchorLink target="_blank" to={item.btn1.link}>
             <div
               style={{
                 marginBottom: "18px",
@@ -202,7 +328,7 @@ const Landing = () => {
               </h3>
             </div>
           </AnchorLink>
-          <AnchorLink to={item.btn2.link}>
+          <AnchorLink target="_blank" to={item.btn2.link}>
             <div
               style={{
                 marginBottom: "18px",
@@ -229,7 +355,7 @@ const Landing = () => {
               </h3>
             </div>
           </AnchorLink>
-          <AnchorLink to={item.btn3.link}>
+          <AnchorLink target="_blank" to={item.btn3.link}>
             <div
               style={{
                 marginBottom: "18px",
@@ -319,6 +445,10 @@ const Landing = () => {
           align-self: flex-end;
           justify-self: flex-end;
           flex-direction: column;
+          margin-right: 12px;
+          ${smBreak} {
+            margin-right: 6px;
+          }
         `}
       >
         <div
@@ -367,6 +497,9 @@ const Landing = () => {
           css={css`
             display: flex;
             flex-direction: row;
+            ${smBreak} {
+              padding-bottom: 20px;
+            }
           `}
         >
           {getTranslationButtons()}
