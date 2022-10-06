@@ -600,7 +600,9 @@ export default {
     padding: "0",
     cursor: "pointer",
     // ...underlineFocus,
-
+    "> a": {
+      color: colors.primary.hex
+    },
     "> h4": {
       margin: "0.2rem",
       color: "white",

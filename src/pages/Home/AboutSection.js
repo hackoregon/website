@@ -249,7 +249,6 @@ const AboutSection = () => {
     <Fragment>
       <a id="about" />
       <div
-        wideContent
         css={css`
           max-width: 1500px;
           margin: 0 auto;

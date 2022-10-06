@@ -5,7 +5,6 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
-import { AnchorLink } from "gatsby-plugin-anchor-links";
 import React, { useState } from "react";
 import Carousel from "react-material-ui-carousel";
 import ArrowForwardIosRoundedIcon from "@material-ui/icons/ArrowForwardIosRounded";
@@ -301,7 +300,7 @@ const Landing = () => {
             }
           `}
         >
-          <AnchorLink target="_blank" to={item.btn1.link}>
+          <a target="_blank" rel="noreferrer" href={item.btn1.link}>
             <div
               style={{
                 marginBottom: "18px",
@@ -327,8 +326,8 @@ const Landing = () => {
                 {item.btn1.title}
               </h3>
             </div>
-          </AnchorLink>
-          <AnchorLink target="_blank" to={item.btn2.link}>
+          </a>
+          <a target="_blank" rel="noreferrer" href={item.btn2.link}>
             <div
               style={{
                 marginBottom: "18px",
@@ -354,8 +353,8 @@ const Landing = () => {
                 {item.btn2.title}
               </h3>
             </div>
-          </AnchorLink>
-          <AnchorLink target="_blank" to={item.btn3.link}>
+          </a>
+          <a target="_blank" rel="noreferrer" href={item.btn3.link}>
             <div
               style={{
                 marginBottom: "18px",
@@ -381,7 +380,7 @@ const Landing = () => {
                 {item.btn3.title}
               </h3>
             </div>
-          </AnchorLink>
+          </a>
         </div>
       </div>
     </div>
@@ -429,7 +428,7 @@ const Landing = () => {
           next={next => setLang(Object.keys(translations)[next])}
           prev={prev => setLang(Object.keys(translations)[prev])}
           index={Object.keys(translations).findIndex(key => key === lang)}
-          interval={15000}
+          interval={10000}
           indicators={false}
         >
           {Object.keys(translations).map(language => (
