@@ -19,7 +19,7 @@ const translations = {
   en: {
     title: "All Data Are Created.",
     description:
-      "Put your principles into practice and discover content-aware systems",
+      "Put your principles into practice and discover Context-Aware Systems",
     btn1: {
       title: "Modules",
       link:
