@@ -1,5 +1,10 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
+import PropTypes from "prop-types";
+import MailOutlineIcon from "@material-ui/icons/MailOutline";
+import TwitterIcon from "@material-ui/icons/Twitter";
+import InstagramIcon from "@material-ui/icons/Instagram";
+import GithubIcon from "@material-ui/icons/GitHub";
 import { xsBreak, maxContentWidth, colors } from "../_Theme/UpdatedBrandTheme";
 import ContentContainer from "./ContentContainer";
 
@@ -8,8 +13,8 @@ const whiteText = css`
   margin: 0;
 `;
 
-const Contact = () => (
-  <ContentContainer margin="sm" color={colors.primary.hex}>
+const Contact = ({ color }) => (
+  <ContentContainer margin="sm" color={color || colors.primary.hex}>
     <div
       css={css`
         text-align: left;
@@ -21,28 +26,59 @@ const Contact = () => (
     >
       <h3
         css={css`
-          padding-bottom: 60px;
+          padding-bottom: 20px;
           ${whiteText}
+          margin-left: 22px;
         `}
         className="h-3"
       >
         Contact Us
       </h3>
-
       <div
         css={css`
-          width: 100%;
-          display: grid;
-          grid-template-columns: max-content max-content 1fr;
-          grid-gap: 4rem;
-
-          ${xsBreak} {
-            grid-template-columns: 1fr;
-            grid-row-gap: 60px;
+          a {
+            color: white;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            flex: 0;
+            background-size: 0% 0%;
+            font-size: 14px;
+            margin-bottom: 10px;
+            span {
+              margin-left: 15px;
+            }
           }
         `}
       >
-        <ul
+        <a href="mailto:hi@civicsoftwarefoundation.com">
+          <MailOutlineIcon /> <span>hi@civicsoftwarefoundation.com</span>
+        </a>
+        <a href="https://twitter.com/CivicSoftware">
+          <TwitterIcon /> <span>@CivicSoftware</span>
+        </a>
+        <a href="https://www.instagram.com/alldataarecreated/">
+          <InstagramIcon /> <span>@alldataarecreated</span>
+        </a>
+        <a href="https://github.com/hackoregon">
+          <GithubIcon /> <span>github</span>
+        </a>
+      </div>
+
+      <div
+      // css={css`
+      //   width: 100%;
+      //   display: grid;
+      //   grid-template-columns: max-content max-content 1fr;
+      //   grid-gap: 4rem;
+
+      //   ${xsBreak} {
+      //     grid-template-columns: 1fr;
+      //     grid-row-gap: 60px;
+      //   }
+      // `}
+      >
+        {/* <ul
           css={css`
             margin-top: -15px;
             > li {
@@ -86,9 +122,9 @@ const Contact = () => (
           <li>
             <a href="mailto:hi@civicsoftwarefoundation.org">Other inquiries</a>
           </li>
-        </ul>
+        </ul> */}
 
-        <div
+        {/* <div
           css={css`
             display: grid;
             ${xsBreak} {
@@ -130,10 +166,54 @@ const Contact = () => (
               +1-202-664-1223
             </a>
           </div>
+        </div> */}
+        <div>
+          <h4
+            css={css`
+              padding: 20px 0;
+              ${whiteText}
+              font-size: 20px;
+            `}
+            className="h-3"
+          >
+            Business Hubs
+          </h4>
+          <div
+            css={css`
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: space-between;
+              p,
+              span {
+                color: white;
+                font-size: 16px;
+              }
+              span {
+                margin: 0 10px;
+              }
+              ${xsBreak} {
+                flex-wrap: wrap;
+                justify-content: center;
+              }
+            `}
+          >
+            <p>Washington, DC</p>
+            <span>|</span>
+            <p>Portland, OR</p>
+            <span>|</span>
+            <p>Montreal, QC</p>
+            <span>|</span>
+            <p>London, UK</p>
+            <span>|</span>
+            <p>Berlin, DE</p>
+          </div>
         </div>
       </div>
     </div>
   </ContentContainer>
 );
-
+Contact.propTypes = {
+  color: PropTypes.string
+};
 export default Contact;

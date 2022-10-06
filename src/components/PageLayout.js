@@ -4,34 +4,19 @@ import { Fragment } from "react";
 import PropTypes from "prop-types";
 
 import SEO from "./SEO";
-import Header from "./Header";
+import NewHeader from "./NewHeader";
 import Footer from "./Footer";
-import CommonCTA from "./CommonCTA";
-import DividerLine from "./DividerLine";
-import KeepInTheLoop from "./KeepInTheLoop";
+import Footer2 from "./Footer2";
+import RebrandHeader from "./RebrandHeader";
 
-const PageLayout = ({
-  title,
-  keywords,
-  children,
-  hideCommonCTA,
-  hideKeepInTheLoop,
-  swoopColor,
-  home
-}) => {
+const PageLayout = ({ title, keywords, children, home, isRebrand }) => {
   return (
     <Fragment>
       <SEO title={title} keywords={keywords} />
-      <Header home={home} />
+      {isRebrand ? <RebrandHeader home={home} /> : <NewHeader home={home} />}
+
       {children}
-      {!hideCommonCTA && (
-        <Fragment>
-          <CommonCTA />
-          <DividerLine hexColor={swoopColor} />
-        </Fragment>
-      )}
-      {!hideKeepInTheLoop && <KeepInTheLoop />}
-      <Footer />
+      {isRebrand ? <Footer2 /> : <Footer />}
     </Fragment>
   );
 };
@@ -43,10 +28,8 @@ PageLayout.propTypes = {
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node
   ]),
-  hideCommonCTA: PropTypes.bool,
-  hideKeepInTheLoop: PropTypes.bool,
-  swoopColor: PropTypes.string,
-  home: PropTypes.bool
+  home: PropTypes.bool,
+  isRebrand: PropTypes.bool
 };
 
 export default PageLayout;

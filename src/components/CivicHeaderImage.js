@@ -37,7 +37,7 @@ function CivicHeaderImage() {
         max-width: 350px;
         height: 100%;
         z-index: -1;
-        margin-top: 2rem;
+        margin-right: -200px;
       `}
     >
       <path

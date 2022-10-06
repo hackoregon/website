@@ -3,8 +3,8 @@ import { jsx } from "@emotion/core";
 import { useStaticQuery, graphql } from "gatsby";
 
 import PageLayout from "../components/PageLayout";
-import TitleAreaNew from "../components/TitleAreaNew";
-import DefaultTitleAreaContent from "../components/DefaultTitleAreaContent";
+// import TitleAreaNew from "../components/TitleAreaNew";
+// import DefaultTitleAreaContent from "../components/DefaultTitleAreaContent";
 import DividerLine from "../components/DividerLine";
 import ContentContainer from "../components/ContentContainer";
 // import hackOregonTeam from "../images/team.png";
@@ -41,12 +41,12 @@ const About = () => {
       keywords={[`Civic Software Foundation`, `CIVIC Platform`]}
     >
       {/* TODO: Add back team pic */}
-      <TitleAreaNew dividerLineColor={colors.green.hex}>
+      {/* <TitleAreaNew dividerLineColor={colors.green.hex}>
         <DefaultTitleAreaContent
           subtitle={contentfulHeading.subtitle}
           title={contentfulHeading.title}
         />
-      </TitleAreaNew>
+      </TitleAreaNew> */}
       {/* <ContentContainer margin="md">
         <FeaturedPost />
       </ContentContainer>
