@@ -304,7 +304,7 @@ const RebrandHeader = () => {
                 margin: 0;
               `}
             >
-              <AnchorLink to="/#about">
+              <AnchorLink to="https://www.notion.so/civicsoftware/About-06f2ca8f56524918ae49d8c4528a153c">
                 <div
                   style={{
                     display: "flex",
@@ -339,7 +339,7 @@ const RebrandHeader = () => {
                 margin: 0;
               `}
             >
-              <AnchorLink to="/about">
+              <AnchorLink to="https://www.notion.so/civicsoftware/Teams-0420fe41777e46ddb881836f1e3d4ff1">
                 <div
                   style={{
                     display: "flex",
